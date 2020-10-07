@@ -1,0 +1,66 @@
+
+
+*, *::after, *::before{
+	box-sizing: border-box;
+}
+body{
+    margin:0;
+    background-color: #ffffe6; 
+    color: #705a1c;
+}
+nav{
+    width:auto;
+    margin:auto;
+    height: 60px;
+    position: fixed;
+    z-index: 100;
+    top:0;
+    left: 0;
+    right: 0;
+}
+
+pre{
+    tab-size:2;
+    white-space: pre-wrap;
+}
+button{
+    font:inherit;
+    margin:0;
+}
+header nav{
+    padding:0 10%;
+    background-color: rgba(201, 76, 76, 0.3);
+}
+header,a, li{
+    color:white;
+    margin-top: 0;
+}
+header ul{
+    margin-top: 0;
+
+}
+header::after{
+    content:'';
+    display: table;
+    clear:both;
+}
+div{
+    display: block;
+}
+
+.body_Style{
+    margin:10% 10% 0 10%;
+}
+.map_responsive{
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+.map_responsive iframe{
+    left: 0;
+    top: 0;
+    height: 100%;
+    width:100%;
+    position: absolute;
+}
