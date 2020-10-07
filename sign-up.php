@@ -76,7 +76,7 @@
 				<input type="email" name="email" placeholder="Enter Email *" value="<?php  $email;?>">
 				<input type="password" name="password" placeholder="Create a Password *" value="<?php  $password;?>">
 
-				<input type="password" name="RepassWord" placeholder="Re-Enter the passward *" value="<?php  $RepassWord;?>">
+				<input type="password" name="RepassWord" placeholder="Re-Enter the password *" value="<?php  $RepassWord;?>">
 
 
 					<label for="job">Tea Preference:</label>
