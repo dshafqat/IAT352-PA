@@ -38,6 +38,10 @@
 
 		<form class ="signupform" action="registration.php" method="get">
 
+			<label for="Firstname"> First name: </label><br><input type="text" name="username"><br>
+
+			<label for="Lastname"> Last name: </label><br><input type="text" name="username"><br>
+
 			<label for="Username"> Username: </label><br><input type="text" name="username"><br>
 
 		    <label for="Password"> Password: </label><br><input type="text" name="password"><br>
@@ -53,7 +57,7 @@
 		    <input type="radio" name="type" value="tea">milk tea <br><br>
 
 
-		  <input type="submit" name="submit" value="Submit">
+		  <input type="submit" name="signup" value="Sign up">
 
   </form>
 

@@ -660,3 +660,30 @@ span.pay_price {
   width:20%;  
   }
 }
+
+
+
+/* -------------------------------- */  
+
+/* sign up page */
+
+.signup-form{
+  width:20rem;
+  margin-top:4rem;
+  margin-left:auto;
+  margin-right:auto;
+  padding-top:1rem;
+  padding-bottom:3rem;
+  padding-left:2rem;
+
+}
+
+.signupform{
+  margin-left:4rem;
+}
+
+.signup-form h1 {
+
+  margin-left: 3.8rem;
+
+}
