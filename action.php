@@ -29,9 +29,9 @@
 
 		if($result->num_rows>0){
 			while($row=$result->fetch_assoc()){
-				$output .='<div class="col-md-3 mb-2 border-light">
+				$output .='<div class="col-md-3 mb-2">
 					<div class="card-deck">
-						<div class="card border-secondary">
+						<div class="card border-secondary border-light">
 							<img src="'. $row['product_image'].'" class="card-img-top">
 							<div class="card-img-overlay">
 								<h6 style="margin-top:260px;"class="text-light text-center rounded p-1">
