@@ -157,7 +157,6 @@ require 'config.php';
 	$(document).ready(function(){
 
 		$(".product_check").click(function(){
-			$("#loader").show();
 
 			var action = 'data';
 			var tea = get_filter_text('tea');
