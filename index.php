@@ -185,6 +185,16 @@ require 'config.php';
 
 	});
 </script>
+
+<!-- Footer section  -->
+	<Footer> 
+		<div class="bottomNav">
+			<p class="bottomNav_p">Dawood Shafqat</p>
+			<p class="bottomNav_p">Kwankiu Chu</p>
+			<p class="bottomNav_p"> @2020 Copyright - IAT352 - PA1</p>
+		</div>
+	</Footer>
+
 	</body>
 
 <!--
@@ -386,4 +396,6 @@ require 'config.php';
 	</Footer>
 </body>	
 -->
+
+
 </html>

@@ -84,16 +84,16 @@ div{
     padding-left: 2rem;
 }
 .bottomNav{
-  background-color: #F06060;
+  background-color: black;
   left:0;
   bottom: 0;
   width: 100%;
-  color:black;
+  color:white;
   text-align: center;
-
-  flex-shrink: 0;
   margin-top: 10rem;
-    height:5rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+
 }
 .bottomNav_p{
     padding-top: 10px;
