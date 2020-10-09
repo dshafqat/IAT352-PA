@@ -44,8 +44,8 @@
 				<h4>CAD $ 6.5</h4>
 				<p>Juicy strawberry notes in our fruit and botanical blends are combined with premium Teavana® Green Tea then slightly sweetened with liquid cane sugar for a refreshing afternoon drink free from artificial flavors & sweeteners.</p>
 				<p>R:5.0 L:5.5</p>
-				<a href="product-info.html"><p><button class="btn btn-3 btn-3a icon-cart">Add to Cart</button></p></a>
-				<a href="product-info.html"><p><button class="btn btn-3 btn-3a icon-checkout">Check Out</button></p></a>
+				<a href="product-info.php"><p><button class="btn btn-3 btn-3a icon-cart">Add to Cart</button></p></a>
+				<a href="product-info.php"><p><button class="btn btn-3 btn-3a icon-checkout">Check Out</button></p></a>
 			</div>
 		</section>
 
