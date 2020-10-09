@@ -1,3 +1,4 @@
+<!--Compare the data from database to filter the product-->
 <?php
 	require 'config.php';
 
