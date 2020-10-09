@@ -4,7 +4,7 @@
 }
 body{
     margin:0;
-    background-color: #ffffe6; 
+    background-color: #F5F3E9; 
     color: #705a1c;
 }
 nav{
@@ -27,7 +27,7 @@ button{
 }
 header nav{
     padding:0 10%;
-    background-color: rgba(201, 76, 76,0.4);
+    background-color: #643E60;
 }
 header,a, li{
     color:white;
@@ -707,7 +707,7 @@ span.pay_price {
       .form-signup input[type="password"]:focus,
       .form-signup textarea:focus,
       .form-signup select:focus{
-       background: #B9CAFA;
+       background: #DBC7D4;
   
       }
 
@@ -759,15 +759,16 @@ span.pay_price {
       }
       .container-fluid{
         padding-top: 80px;
-        background: #ffffe6;
+        background: #F5F3E9;
         color:#705a1c;
       }
       .col-lg-2{
-        background: #faf0d7;
+        background: #E3E1CA;
       }
       .card.border-secondary{
-        background-color: #faf0d7;
+        background-color: #E3E1CA;
         border-color: #d1c197;
+
       }
       .card-img-overlay h6{
         background:#ccb476;
