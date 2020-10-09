@@ -27,7 +27,7 @@ button{
 }
 header nav{
     padding:0 10%;
-    background-color: rgba(201, 76, 76, 0.3);
+    background-color: rgba(201, 76, 76,0.4);
 }
 header,a, li{
     color:white;
@@ -110,7 +110,7 @@ footer p{
 .heading_layout{
   padding-bottom: 0.5rem;
   border-bottom: 0.5px solid black;
-  color:#orange;
+  color: orange;
 }
 .div_main{
   margin:0 2rem 0 2rem;
@@ -197,21 +197,7 @@ footer p{
   font-family: 'Source Sans Pro', 'Open Sans', 'sans-serif';
   font-size: 1rem;
 }
-.swatch_color1{
-  background-color: rgb(234, 231, 220);
-}
-.swatch_color2{
-  background-color: rgb(216, 195, 165);
-}
-.swatch_color3{
-  background-color: rgb(142, 141, 138);
-}
-.swatch_color4{
-  background-color: rgb(233, 128, 116);
-}
-.swatch_color5{
-  background-color: rgb(232, 90, 79);
-}
+
 .icon_styling{
    width:50px;
    height:50px;
@@ -674,7 +660,7 @@ span.pay_price {
       margin: 10px auto;
       padding: 20px;
       border-radius: 8px;
-      padding-top: 5rem;
+      margin-top: 5rem;
     }
    
     .form-signup fieldset{
@@ -821,3 +807,46 @@ span.pay_price {
         font-weight: 900;
         right: 10px;
       }
+
+
+     
+
+  .welcome-btn {
+   display: inline-block;
+   background-color: #E8DBB5;
+   border: none;
+   color: #FFFFFF;
+   text-align: center;
+   font-size: 15px;
+   padding: 10px;
+   width: 120px;
+   transition: all 0.5s;
+   border-radius: 20px;
+  
+}
+.welcome-btn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    color: white;
+    font-weight: 600;
+  background-color: #E8DBB5;
+}
+
+.welcome-btn span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+  background-color: #E8DBB5;
+}
+
+
+
+.welcome-btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}

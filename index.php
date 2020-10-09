@@ -28,14 +28,13 @@ require 'config.php';
 	<header>
 		<nav>
 			<div class="logo">	
-				<img src="img/bubbleorzo logo.png" alt="Brand design / Logo">
+				<img src="img/logo.png" alt="Brand design / Logo">
 			</div>
 
 			<div class="menu">
 				<ul>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
-					<li><a href="sign-in.php">Sign In</a></li>
 					<li><a href="sign-up.php">Sign Up</a></li>
 				</ul>
 			</div>
@@ -143,7 +142,7 @@ require 'config.php';
 										Tea : <?= $row['tea']; ?><br>
 										Add_ons : <?= $row['add_on']; ?><br>
 									</p>
-									<a href="#" class="btn cart">Add to Cart</a>
+									<a href="product-info.php" class="btn cart"> View</a>
 								</div>
 							</div>
 						</div>

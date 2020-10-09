@@ -1,1 +1,3 @@
 Name:Max, Email:Max@max.com, Password:aaa, Choice:BubbleTea
+Name:Jon, Email:Jon@Jon.com, Password:ttt, Choice:BubbleTea
+Name:bob, Email:bob@gmail.cm, Password:pass, Choice:BubbleTea

@@ -17,17 +17,13 @@
 	<header>
 		<nav>
 			<div class="logo">	
-				<img src="img/bubbleorzo logo.png" alt="Brand design / Logo">
+				<img src="img/logo.png" alt="Brand design / Logo">
 			</div>
 
 			<div class="menu">
 				<ul>
 					<li><a href="index.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
-					<!-- <li><a href="storeInfo.html">StoreInfo</a></li> -->
-					<!-- <li><a href="aboutUs.html">About US</a></li> -->
-					<!-- <li><a href="contact.html">Contact US</a></li> -->
-					<li><a href="sign-in.php">Sign In</a></li>
 					<li><a href="sign-up.php">Sign Up</a></li>
 				</ul>
 			</div>
