@@ -44,7 +44,13 @@
 										Tea : '. $row['tea'] .'<br>
 										Add_ons : '. $row['add_on'] .'<br>
 									</p>
-									<a href="#" class="btn cart">Add to Cart</a>
+									<a onclick="myFunction('. $row['id'].')" class="btn cart">View</a>
+
+									<script>
+										function myFunction(selectedid){
+  											window.location.href ="product-info.php?uid="+selectedid;
+										}
+									</script>
 								</div>
 							</div>
 						</div>
