@@ -14,6 +14,8 @@ require 'config.php';
 	<link rel="stylesheet" href="css/main.css"> 
 	<link rel="stylesheet" href="css/normalize.css"> 		
 	<link rel="stylesheet" href="css/layout.css"> 
+	<!-- Icon  links -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 
 </head>
 
@@ -83,7 +85,7 @@ require 'config.php';
 			<section class="review_box">
 				<h3 class="style_text">Customer Review</h3>
 				<section>
-					<h5 class="customer_name">Freddie Barnett</h5>
+					<h4 class="customer_name">Freddie Barnett</h4>
 				</section>	
 
 				<section>  <!-- Star Rating Section -->
@@ -94,13 +96,13 @@ require 'config.php';
 					<span class="fa fa-star checked"></span>
 				</section>
 
-				<h6>Perfect beverage for me</h6>
+				<h5>Perfect beverage for me</h5>
 				<p>It’s a perfect beverage to enjoy any day with great health benefits! With the addition of strawberry it makes you look forward to Spring and Summer.</p>
 			</section>
 
 			<section class="review_box">
 				<section>
-					</i><h5 class="customer_name">Arslan Hart</h5>
+					</i><h3 class="customer_name">Arslan Hart</h3>
 				</section>	
 
 				<section>  <!-- Star Rating Section -->
@@ -111,13 +113,13 @@ require 'config.php';
 					<span class="fa fa-star checked"></span>
 				</section>
 
-				<h6>Delicious Green Tea</h6>
+				<h5>Delicious Green Tea</h5>
 				<p>Delicious green tea. If you're tired of plain or jasmine flavored green tea, try this strawberry one.</p>
 			</section>
 
 			<section class="review_box">
 				<section>
-					</i><h5 class="customer_name">Kate Cole</h5>
+					</i><h3 class="customer_name">Kate Cole</h3>
 				</section>	
 
 				<section>  <!-- Star Rating Section -->
@@ -128,7 +130,7 @@ require 'config.php';
 					<span class="fa fa-star"></span>
 				</section>
 
-				<h6>This is my favorite tea ever</h6>
+				<h5>This is my favorite tea ever</h5>
 				<p>This is my favorite tea ever! It is sweet enough but not too sweet. I am one of those people who always add a little honey and creamer to tea, but I can actually stand to drink this stuff plain or with just a tiny bit of sweetener. You can definitely taste the strawberries.</p>
 			</section>
 		</section> <!-- End of the Other customer review -->
