@@ -1,3 +1,4 @@
+<!-- Please import the sql file in the folder to see the list-->
 <?php
 require 'config.php';
 ?>
@@ -49,19 +50,7 @@ require 'config.php';
 			<hr>
 			<h6 class="filtertitle">Tea</h6>
 			<ul class="list-group">
-				<?php
-				$sql="SELECT DISTINCT tea FROM products ORDER BY tea";
-				$result=$conn->query($sql);
-				while($row=$result->fetch_assoc()){
-				?>
-				<li class="list-group-item">
-					<div class="form-check">
-						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input product_check" value="<?= $row['tea']; ?> " id="tea"><?= $row['tea'];?>
-						</label>
-					</div>
-				</li>
-			<?php } ?>
+				
 			</ul>
 
 			<h6 class="filtertitle">Add-ons</h6>
@@ -119,15 +108,13 @@ require 'config.php';
 		<div class="col-lg-9">
 			<h5 class="text-center" id="textChange">All Products</h5>
 			<hr>
-			<div class="text-center">
-				<img src="img/loader.gif" id="loader" widtg="200" style="display:none;">
-			</div>
 			<div class="row" id="result">
 				<?php
 					$sql="SELECT * FROM products";
 					$result=$conn->query($sql);
 					while($row=$result->fetch_assoc()){
 				?>
+				<!-- Card view for product page, write the data from database-->
 				<div class="col-md-3 mb-2">
 					<div class="card-deck">
 						<div class="card border-secondary border-light">
@@ -142,7 +129,13 @@ require 'config.php';
 										Tea : <?= $row['tea']; ?><br>
 										Add_ons : <?= $row['add_on']; ?><br>
 									</p>
-									<a href="product-info.php" class="btn cart"> View</a>
+									<a onclick="myFunction(<?= $row['id']; ?>)" class="btn cart">View</a>
+
+									<script>
+										function myFunction(selectedid){
+  											window.location.href ="product-info.php?uid="+selectedid;
+										}
+									</script>
 								</div>
 							</div>
 						</div>
@@ -152,7 +145,9 @@ require 'config.php';
 		</div>
 	</div>
 </div>
+<!-- Call the function for filter-->
 <script type="text/javascript">
+
 	$(document).ready(function(){
 
 		$(".product_check").click(function(){
