@@ -76,7 +76,7 @@ $choice = $_REQUEST["choice"];
 
 $sql = "INSERT into `users` (name, email, password, choice)
 
-VALUES ('$name',  '$email','" . md5($password) . "', '$choice')";
+VALUES ('$name',  '$email','$password', '$choice')";
 
 $result = $conn->query($sql);
 
