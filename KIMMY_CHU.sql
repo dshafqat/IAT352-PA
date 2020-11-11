@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 10, 2020 at 02:15 AM
+-- Host: 127.0.0.1
+-- Generation Time: Nov 11, 2020 at 07:21 PM
 -- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `KIMMY_CHU`
+-- Database: `kimmy_chu`
 --
 
 -- --------------------------------------------------------
@@ -61,6 +61,28 @@ INSERT INTO `products` (`id`, `product_name`, `tea`, `add_on`, `price_r`, `price
 (15, 'Rose Milk Tea', 'Milk Tea', 'Pearls', '4.5', '5.0', 'img/bubbleTea/bubble_tea_15.png', 'img/product_info/product15.jpg', 'Rose milk tea is a delicious combination of black tea infused with floral, aromatic rose syrup and a splash of warm milk. A perfect and comfort drink to warm up inside out in this cold weather.'),
 (16, 'Mango Green Tea', 'Green Tea', 'Puree', '5.0', '5.5', 'img/bubbleTea/bubble_tea_16.png', 'img/product_info/product16.jpg', 'The tropical flavour of juicy mango, combined with earthy green tea. The Teavana® Shaken Iced Mango Green Tea Lemonade is a delicious blend of premium green tea, juicy mango, sweet passion fruit, and a splash of lemonade. Made with 100% Organic Green Tea and real Mango Fruit with a light and fruity flavor. No sugar, additives, fillers or preservatives ever! Zero grams of sugar, but with a slightly sweet taste from the Mango Fruit.');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `uid` int(50) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `choice` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`uid`, `name`, `email`, `password`, `choice`) VALUES
+(1, 'aaa', 'bbb@ccc', 'e2fc714c4727ee9395f324cd2e7f331f', 'BubbleTea'),
+(2, 'bob', 'bob@bobs.com', '81dc9bdb52d04dc20036dbd8313ed055', 'MilkTea');
+
 --
 -- Indexes for dumped tables
 --
@@ -72,6 +94,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`uid`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -80,6 +108,12 @@ ALTER TABLE `products`
 --
 ALTER TABLE `products`
   MODIFY `id` int(16) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `uid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

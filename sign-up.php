@@ -30,37 +30,6 @@
 		</nav>
 	</header>
 
-
-	<!-- <div class="signup-form">
-		<h1>Sign up</h1>
-
-		<form class ="signupform" action="registration.php" method="get">
-
-			<label for="Firstname"> First name: </label><br><input type="text" name="username"><br>
-
-			<label for="Lastname"> Last name: </label><br><input type="text" name="username"><br>
-
-			<label for="Username"> Username: </label><br><input type="text" name="username"><br>
-
-		    <label for="Password"> Password: </label><br><input type="text" name="password"><br>
-
-		    <label for="Password2"> Re-enter Password: </label><br><input type="text" name="password2"><br>
-
-		    <label for="Email"> Email: </label> <br><input type="text" name="email"><br>
-
-		    <label for="Phone"> Phone Number: </label> <br><input type="text" name="phone"><br>
-
-		    <label for="Notif"> Tea Preference: </label><br>
-		    <input type="radio" name="type" value="tea">bubble tea
-		    <input type="radio" name="type" value="tea">milk tea <br><br>
-
-
-		  <input type="submit" name="signup" value="Sign up">
-
-  </form>
-
-</div> -->
-
 	<body>
 
 			<div class="form-signup">
@@ -92,19 +61,25 @@
 
 <!-- Empty variables check-->
 <?php
+	
+require('config.php');
 
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (isset($_REQUEST['name'])) {
 	// define variables and set to empty values
 $name = $email = $password = $ReEnterPassword = "";
 
-$name = $_POST["name"];
-$email = $_POST["email"];
-$password = $_POST["password"];
-$ReEnterPassword = $_POST["RepassWord"];
-$choice = $_POST["choice"];
+$name = $_REQUEST["name"];
+$email = $_REQUEST["email"];
+$password = $_REQUEST["password"];
+$ReEnterPassword = $_REQUEST["RepassWord"];
+$choice = $_REQUEST["choice"];
 
-$file = 'memberInfo.txt';
+$sql = "INSERT into `users` (name, email, password, choice)
+
+VALUES ('$name',  '$email','" . md5($password) . "', '$choice')";
+
+$result = $conn->query($sql);
+
 // Open connection to the $file in writing mode
 
 	// check if form is valid
@@ -119,26 +94,22 @@ $file = 'memberInfo.txt';
 		exit("*Please complete the form");
 
 	}
-	else if($handle = fopen($file, 'a+')) {
-
+	// After form is completed, redirect to welcome.php to display text otherwise display error
+	
 
 	// Write string to the file
 	// the function returns the number of bytes interted or false
-	fwrite($handle, "Name:$name, Email:$email, Password:$password, Choice:$choice\n");
 
 	// After form is completed, redirect to welcome.php to display text otherwise display error
 
+
+	 else {
 	header("Location:welcome.php");
     exit;
-
-	fclose($handle);
-	} else {
 	echo "Error, could not open file for writing.";
 	}
 
 }
-
-
 
 ?>
 
