@@ -6,7 +6,8 @@
 -- Generation Time: Nov 11, 2020 at 07:21 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
-
+CREATE DATABASE 'KIMMY_CHU';
+USE 'KIMMY_CHU';
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -26,7 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `products`
 --
-
+DROP TABLE IF EXISTS 'product';
 CREATE TABLE `products` (
   `id` int(16) UNSIGNED NOT NULL,
   `product_name` varchar(100) NOT NULL,
@@ -42,6 +43,8 @@ CREATE TABLE `products` (
 --
 -- Dumping data for table `products`
 --
+
+LOCK TABLES 'product' WRITE;
 
 INSERT INTO `products` (`id`, `product_name`, `tea`, `add_on`, `price_r`, `price_l`, `product_image`, `detail_image`, `information`) VALUES
 (1, 'Original Milk Tea', 'Milk Tea', 'Pearls', '4.0', '4.5', 'img/bubbleTea/bubble_tea_1.png', 'img/product_info/product1.jpg', 'The tea: We used Tetley’s orange pekoe black tea for its strong flavour and rich colour.\r\nThe milk: In this case, we’re not using real “milk”. We chose to use Coffee Mate’s non-dairy powdered creamer for a richer and milkier flavour and a slightly richer texture.\r\nThe sweetener: We used regular granulated white sugar because we want to keep the sweetener flavour neutral.'),
@@ -62,11 +65,11 @@ INSERT INTO `products` (`id`, `product_name`, `tea`, `add_on`, `price_r`, `price
 (16, 'Mango Green Tea', 'Green Tea', 'Puree', '5.0', '5.5', 'img/bubbleTea/bubble_tea_16.png', 'img/product_info/product16.jpg', 'The tropical flavour of juicy mango, combined with earthy green tea. The Teavana® Shaken Iced Mango Green Tea Lemonade is a delicious blend of premium green tea, juicy mango, sweet passion fruit, and a splash of lemonade. Made with 100% Organic Green Tea and real Mango Fruit with a light and fruity flavor. No sugar, additives, fillers or preservatives ever! Zero grams of sugar, but with a slightly sweet taste from the Mango Fruit.');
 
 -- --------------------------------------------------------
-
+UNLOCK TABLES;
 --
 -- Table structure for table `users`
 --
-
+DROP TABLE IF EXISTS 'users';
 CREATE TABLE `users` (
   `uid` int(50) NOT NULL,
   `name` varchar(255) NOT NULL,
