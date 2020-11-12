@@ -22,9 +22,10 @@
 
 			<div class="menu">
 				<ul>
-					<li><a href="index.php">Home</a></li>
+					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
 					<li><a href="sign-up.php">Sign Up</a></li>
+					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -58,6 +59,7 @@
 				<input type="submit" name="submit" value="Submit" />
 				</form>
 				</div>
+			
 
 <!-- Empty variables check-->
 <?php

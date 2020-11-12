@@ -26,6 +26,7 @@ require 'config.php';
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
+
 	<header>
 		<nav>
 			<div class="logo">	
@@ -34,20 +35,14 @@ require 'config.php';
 
 			<div class="menu">
 				<ul>
-					<li><a href="index.php">Home</a></li>
+					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
 					<li><a href="sign-up.php">Sign Up</a></li>
+					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>
-			<?php
-			$sql = $conn->query("SELECT * FROM cart");
-			$row_cnt = $sql->num_rows;
-			$cart_count = $row_cnt;
-		?>
-		<div class="cart_div">
-			<a href="cart.php"><img src="cart-icon.png" /> Cart<span>
-			<?php echo $cart_count; ?></span></a>
-		</div>
+
+
 		</nav>
 	</header>
 
@@ -197,8 +192,6 @@ require 'config.php';
 	</Footer>
 
 	</body>
-<<<<<<< HEAD
-=======
 
 <!--
 
@@ -400,6 +393,4 @@ require 'config.php';
 </body>	
 -->
 
-
->>>>>>> 19e3b323f013049e61126e02eb1d8ac5cd1a6847
 </html>

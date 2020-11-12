@@ -17,6 +17,7 @@ require 'config.php';
 	<!-- Icon  links -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
 
+
 </head>
 	<header>
 		<nav>
@@ -26,9 +27,10 @@ require 'config.php';
 
 			<div class="menu">
 				<ul>
-					<li><a href="index.php">Home</a></li>
+					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
 					<li><a href="sign-up.php">Sign Up</a></li>
+					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>
 
@@ -36,6 +38,8 @@ require 'config.php';
 	</header>
 <body>
 <div id="cartlist">
+
+
 <?php
 $sql = $conn->query("SELECT * FROM cart");
 $row_cnt = $sql->num_rows;

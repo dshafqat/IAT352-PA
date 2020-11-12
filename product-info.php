@@ -27,9 +27,10 @@ require 'config.php';
 
 			<div class="menu">
 				<ul>
-					<li><a href="index.php">Home</a></li>
+					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
 					<li><a href="sign-up.php">Sign Up</a></li>
+					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>
 		<?php
