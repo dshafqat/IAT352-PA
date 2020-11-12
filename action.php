@@ -20,10 +20,6 @@
 			$sql .="AND price_r IN('".$price_r."')";
 		}
 
-		if(isset($_POST['price_l'])){
-			$price_l = implode("','", $_POST['price_l']);
-			$sql .="AND price_l IN('".$price_l."')";
-		}
 
 		$result = $conn->query($sql);
 		$output='';
@@ -39,7 +35,7 @@
 									'. $row['product_name'].' </h6>
 								</div>
 								<div class ="card-body">
-									<h4 class="card-title text-center">R:'. number_format($row['price_r'],1).' &nbsp;L:'. number_format($row['price_l'],1).'</h4>
+									<h4 class="card-title text-center">R:'. number_format($row['price_r'],1).'</h4>
 									<p>
 										Tea : '. $row['tea'] .'<br>
 										Add_ons : '. $row['add_on'] .'<br>
@@ -63,4 +59,5 @@
 		echo $output;
 
 	}
+
 ?>

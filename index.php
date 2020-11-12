@@ -39,6 +39,15 @@ require 'config.php';
 					<li><a href="sign-up.php">Sign Up</a></li>
 				</ul>
 			</div>
+			<?php
+			$sql = $conn->query("SELECT * FROM cart");
+			$row_cnt = $sql->num_rows;
+			$cart_count = $row_cnt;
+		?>
+		<div class="cart_div">
+			<a href="cart.php"><img src="cart-icon.png" /> Cart<span>
+			<?php echo $cart_count; ?></span></a>
+		</div>
 		</nav>
 	</header>
 
@@ -82,7 +91,7 @@ require 'config.php';
 			<?php } ?>
 			</ul>
 
-			<h6 class="filtertitle">Price(Regular)</h6>
+			<h6 class="filtertitle">Price</h6>
 			<ul class="list-group">
 				<?php
 				$sql="SELECT DISTINCT price_r FROM products ORDER BY price_r";
@@ -98,23 +107,6 @@ require 'config.php';
 				</li>
 			<?php } ?>
 
-			</ul>
-
-			<h6 class="filtertitle">Price(Large)</h6>
-			<ul class="list-group">
-				<?php
-				$sql="SELECT DISTINCT price_l FROM products ORDER BY price_l";
-				$result=$conn->query($sql);
-				while($row=$result->fetch_assoc()){
-				?>
-				<li class="list-group-item">
-					<div class="form-check">
-						<label class="form-check-label">
-							<input type="checkbox" class="form-check-input product_check" value="<?= $row['price_l']; ?> " id="price_l"><?= $row['price_l'];?>
-						</label>
-					</div>
-				</li>
-			<?php } ?>
 			</ul>
 
 		</div>
@@ -137,16 +129,18 @@ require 'config.php';
 									<?= $row['product_name']; ?> </h6>
 								</div>
 								<div class ="card-body">
-									<h4 class="card-title text-center">R:<?= number_format($row['price_r'],1);?> &nbsp;L:<?= number_format($row['price_l'],1); ?></h4>
+									<h4 class="card-title text-center">$<?= number_format($row['price_r'],1);?></h4>
 									<p>
 										Tea : <?= $row['tea']; ?><br>
 										Add_ons : <?= $row['add_on']; ?><br>
 									</p>
 									<a onclick="myFunction(<?= $row['id']; ?>)" class="btn cart">View</a>
+									<div id="pickid"></div>
 
 									<script>
 										function myFunction(selectedid){
   											window.location.href ="product-info.php?uid="+selectedid;
+
 										}
 									</script>
 								</div>
@@ -169,12 +163,11 @@ require 'config.php';
 			var tea = get_filter_text('tea');
 			var add_on = get_filter_text('add_on');
 			var price_r = get_filter_text('price_r');
-			var price_l = get_filter_text('price_l');
 
 			$.ajax({
 				url:'action.php',
 				method:'POST',
-				data:{action:action,tea:tea,add_on:add_on,price_r:price_r,price_l:price_l},
+				data:{action:action,tea:tea,add_on:add_on,price_r:price_r},
 				success:function(response){
 					$("#result").html(response);
 					$("#loader").hide();

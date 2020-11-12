@@ -32,18 +32,32 @@ require 'config.php';
 					<li><a href="sign-up.php">Sign Up</a></li>
 				</ul>
 			</div>
+		<?php
+			$sql = $conn->query("SELECT * FROM cart");
+			$row_cnt = $sql->num_rows;
+			$cart_count = $row_cnt;
+		?>
+		<div class="cart_div">
+			<a href="cart.php"><img src="cart-icon.png" /> Cart<span>
+			<?php echo $cart_count; ?></span></a>
+		</div>
 		</nav>
 	</header>
 
-
+<body>
 	<!-- The body sections except Top Navigation bar & the Footer -->
 	<section class="body_Style">
 		<section class="main_container">
-			<div class="main_store_box">			
+			<div class="main_store_box">	
+
 				<?php
-
-				$somevar = $_GET['uid'];
-
+				$isTouch = isset($_GET['uid']);
+				if($isTouch){
+					$_SESSION['uid'] = $_GET['uid'];
+					$somevar = $_GET['uid'];
+				}else{
+					$somevar = $_SESSION['uid'];
+				}
 
 
 				$query = "SELECT * FROM products";
@@ -55,8 +69,9 @@ require 'config.php';
 				    	$postname = $row['product_name'];
 				    	$postimage = $row['detail_image'];
 				    	$postinfo = $row['information'];
-				    	$price_r = $row['price_r'];
-				    	$price_l = $row['price_l'];
+				    	$price = $row['price_r'];
+				    	$image = $row['product_image'];
+				    	$code = $row['product_code'];
 
 					}}
 				?>
@@ -64,7 +79,7 @@ require 'config.php';
 			</div>
 
 			<div class="main_store_box">
-
+				<div id="message"></div>
 				<h3 class="style_text"><?= $postname; ?></h3>
 			<script>
 				function myFunction() {
@@ -74,10 +89,12 @@ require 'config.php';
 
 			</script>
 
+				<form action="" method="post">
 				<p><?= $postinfo; ?></p>
-				<p>R: <?= $price_r; ?> L: <?= $price_l; ?></p>
-				<a href="product-info.php"><p><button class="btn btn-3 btn-3a icon-cart">Add to Cart</button></p></a>
-				<a href="product-info.php"><p><button class="btn btn-3 btn-3a icon-checkout">Check Out</button></p></a>
+				<p>$ <?= $price; ?> </p>
+				<input type="text" name="qty"  placeholder="Enter Quantity"  value="<?php  $qty;?>" >
+					<input type="submit" name="submit" value="Submit" />
+				</form> 
 			</div>
 		</section>
 
@@ -85,7 +102,7 @@ require 'config.php';
 			<section class="review_box">
 				<h3 class="style_text">Customer Review</h3>
 				<section>
-					<h4 class="customer_name">Freddie Barnett</h4>
+					<h3 class="customer_name">Freddie Barnett</h3>
 				</section>	
 
 				<section>  <!-- Star Rating Section -->
@@ -145,6 +162,48 @@ require 'config.php';
 			<p class="bottomNav_p"> @2020 Copyright - IAT352 - PA1</p>
 		</div>
 	</Footer>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".addItemBtn").click(function(e){
+			echo 'alert(message successfully sent)';
+			e.preventDefault();
+			var $form = $(this).closest(".form-submit");
+			var pid = $form.find(".pid").val();
+			var pname = $form.find(".pname").val();
+			var pprice = $form.find(".pprice").val();
+			var pimage = $form.find(".pimage").val();
+			var pcode = $form.find(".pcode").val();
+
+			$.ajax({
+				url: 'cartaction.php',
+				method: 'post';
+				data: {pid:pid,pname:pname,pprice:pprice,pimage:pimage,pcode:pcode},
+				success:function(response){
+					$("message").html(response);
+				}
+			});
+		});
+	});
+</script>
+<?php
+if (isset($_REQUEST['qty'])) {	
+$sql = $conn->query("SELECT * FROM cart WHERE product_code='$code'");
+$row_cnt = $sql->num_rows;
+if($row_cnt > 0){
+    $message = "Product is already added to your cart!";
+	echo "<script type='text/javascript'>alert('$message');</script>";
+}else{
+	$qty = $_REQUEST["qty"];
+$sqli = "INSERT INTO `cart` (product_name, product_price, product_image, qty, product_code)
+
+VALUES ('$postname', '$price','$image', '$qty', '$code')";
+$result = $conn->query($sqli);
+$message = "Product is added to your cart!";
+	echo "<script type='text/javascript'>alert('$message');</script>";
+}
+}
+
+?>
 
 </body>
 

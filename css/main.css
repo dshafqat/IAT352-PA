@@ -844,10 +844,30 @@ span.pay_price {
   transition: 0.5s;
   background-color: #E8DBB5;
 }
-
-
-
 .welcome-btn:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+#cartlist{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#cartlist td, #cartlist th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#cartlist tr:nth-child(even){background-color: #f2f2f2;}
+
+#cartlist tr:hover {background-color: #ddd;}
+
+#cartlist th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
 }
