@@ -29,7 +29,7 @@ require 'config.php';
 				<ul>
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
-					<li><a href="sign-up.php">Sign Up</a></li>
+					<li><a href="sign-up.php">Account</a></li>
 					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>
@@ -118,6 +118,7 @@ $total_price += ($price*$row['qty']);
 	<td colspan="5" align="right">
 
 	<form method="post" action="">
+	<input name="remove_button" type="submit" value=" Remove Items " />
     <input name="submit_button" type="submit" value=" Place Order " />
 </form>
 
@@ -130,15 +131,24 @@ $total_price += ($price*$row['qty']);
 	{
 	    mysqli_query($conn, 'TRUNCATE TABLE `cart`');
 	    header("Location: " . $_SERVER['PHP_SELF']);
-	    exit();
+	    header("Location:orderConfirmation.php");
+	    
+	   
 	}
 
+	if(isset($_POST['remove_button']))
+	{
+	    mysqli_query($conn, 'TRUNCATE TABLE `cart`');
+	    header("Location: " . $_SERVER['PHP_SELF']);
+	    exit();
+
+	}
 ?>
 </tbody>
 </table> 
   <?php  
-}else{
- echo "<h3>Your cart is empty!</h3>";
+}
+else{
  echo "<h3>Your cart is empty!</h3>";
  }
 ?>
@@ -149,5 +159,7 @@ $total_price += ($price*$row['qty']);
 <div class="message_box" style="margin:10px 0px;">
 </div>
 </body>
+
+
 
 </html>

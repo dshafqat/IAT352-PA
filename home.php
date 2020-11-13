@@ -22,7 +22,7 @@
 				<ul>
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
-					<li><a href="sign-up.php">Sign Up</a></li>
+					<li><a href="sign-up.php">Account</a></li>
 					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>
@@ -65,8 +65,8 @@
 				<div class="main_container">
 
 					<div class="main_box">
-						<h2>Lemon-Sun</h2>
-						<h3 class="style_text">Bubble Tea</h3>
+						<h2>Black Tea</h2>
+						<h3 class="style_text">Black Tea</h3>
 							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 					</div>
 
@@ -84,12 +84,14 @@
 					</div>
 
 					<div class="main_box">
-						<h2>Strawberry Latte</h2>
+						<h2>Green Tea</h2>
 						<h3 class="style_text">Bubble Tea</h3>
 							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 					</div>
 				</div>  
-		</section> <!-- End of second product section -->
+		</section>
+
+		  <!-- End of second product section -->
 		
 		<section>
 			<!-- <button onclick="scrollToTop()" id="scroll-btn" title="Go to top">&#8679;</button> -->
@@ -114,10 +116,37 @@
 			</script>
 		</section> -->
 
-	</section> <!-- End of The body sections -->
+	</section>
 
+	<section>
+				<div class="main_container">
+
+					<div class="main_box">
+						<h2>Milk Tea</h2>
+						<h3 class="style_text">Bubble Tea</h3>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+					</div>
+
+					<div class="main_box">
+						<a href="product2.html"><img class="main_box_img1" src="img/bubbleTea/bubble_tea_2.png" alt="Bubble Tea image."></a>
+					</div>
+
+				</div>  
+		</section> <!-- End of third product section --> 
+
+		<!-- End of The body sections -->
+</section>
 </body>
 
 
 
-</html>
+	<Footer> 
+		<div class="bottomNav">
+			<p class="bottomNav_p">Dawood Shafqat</p>
+			<p class="bottomNav_p">Kwankiu Chu</p>
+			<p class="bottomNav_p"> @2020 Copyright - IAT352 - PA2</p>
+		</div>
+	</Footer>
+
+
+</html

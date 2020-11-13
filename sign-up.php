@@ -24,7 +24,7 @@
 				<ul>
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
-					<li><a href="sign-up.php">Sign Up</a></li>
+					<li><a href="sign-up.php">Account</a></li>
 					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>
@@ -120,7 +120,7 @@ $result = $conn->query($sql);
 		<div class="bottomNav">
 			<p class="bottomNav_p">Dawood Shafqat</p>
 			<p class="bottomNav_p">Kwankiu Chu</p>
-			<p class="bottomNav_p"> @2020 Copyright - IAT352 - PA1</p>
+			<p class="bottomNav_p"> @2020 Copyright - IAT352 - PA2</p>
 		</div>
 	</Footer>
 
