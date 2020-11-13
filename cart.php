@@ -36,7 +36,14 @@ require 'config.php';
 
 		</nav>
 	</header>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 <body>
+
+<div class="cartform">
 <div id="cartlist">
 
 
@@ -46,6 +53,7 @@ $row_cnt = $sql->num_rows;
 if($row_cnt > 0){
     $total_price = 0;
 ?> 
+
 <table class="carttable">
 	<tr>
 		<th></th>
@@ -108,11 +116,15 @@ $total_price += ($price*$row['qty']);
 </tr>
 <tr>
 	<td colspan="5" align="right">
+
 	<form method="post" action="">
     <input name="submit_button" type="submit" value=" Place Order " />
 </form>
+
 </td>
 </tr>
+
+<div>
 <?php
 	if(isset($_POST['submit_button']))
 	{
