@@ -1,12 +1,10 @@
-<!--This page is used to check if there is an active session-->
-<!-- if there is no active session, user is not logged in, redirect user to login page-->
+<!--Check if user is signed out-->
 
 <?php
 session_start();
 
 if(!isset($_SESSION["email"])){
-  // if session variable 'username'is not set
-	//redirect to login page
+  //redirect user to sign-in page if signed out
   header("Location: sign-in.php");
   exit(); }
 

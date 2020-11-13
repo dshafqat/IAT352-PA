@@ -22,13 +22,14 @@
 
   <?php
   require('config.php'); //connection to db code
+  include("nonactive_session_check.php");
     ?>
 
 <div class="container-fluid">
 
 		<div class="col-md-12" align="center">
  
-		 <h1> Login Successful </h1>
+		 <h1 class="display-3">Welcome to your account, <?php echo $_SESSION['name']; ?>!</h1>
 		 <a href="index.php" class="welcome-btn">Shop Now</a>
      <a href="logout.php" class="welcome-btn">log out</a>
 

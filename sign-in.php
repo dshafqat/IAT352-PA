@@ -38,15 +38,20 @@
 		<fieldset>
 			<legend><span class="number"> Sign In</legend>
 
+			
+				<input type="text" name="name" placeholder="Enter Name *" value="<?php  $name;?>">
+
 				<input type="email" name="email" placeholder="Enter Email *" value="<?php  $email;?>">
+
 				<input type="password" name="password" placeholder="Enter Password *" value="<?php  $password;?>">
 	
 				</fieldset>
 
 				<input type="submit" name="submit" value="Submit" />
 				</form>
-<!-- 
-				<a href="sign-up.php">Not a member? Sign up now!</a> -->
+
+				<a href="sign-up.php">Not a member? Sign up now!</a>
+				
 				</div>
 			
 
@@ -58,10 +63,11 @@
 
 			if (isset($_REQUEST['email'])) {
 				// define variables and set to empty values
-			$email = $password = "";
+			$email = $password = $name = "";
 
 			$email = $_REQUEST["email"];
 			$password = $_REQUEST["password"];
+			$name = $_REQUEST["name"];
 
 
 			$sql = "SELECT * FROM `users` WHERE email='$email' and password='$password'";
@@ -72,12 +78,13 @@
 		//if row equal 1 means user does exist
 			if ($rows == 1) {
 				$_SESSION['email'] = $email;
+				$_SESSION['name'] = $name;
 				header("Location:login_successful.php");
 			} else {
 
 				//else means user enters the wrong username or password
 				echo "<div class='form'>
-					<h3>Username/password is incorrect.</h3>
+					<h3>Email or password is incorrect.</h3>
 				</div>";
 
 
