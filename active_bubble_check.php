@@ -6,7 +6,7 @@ session_start();
 if(isset($_SESSION["email"])){
 
   //redirect to logged in page
-  header("Location: product-info.php");
+  header("Location: welcome.php");
   exit(); }
 
 ?>
