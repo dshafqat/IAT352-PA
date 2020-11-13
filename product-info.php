@@ -35,17 +35,6 @@ include("nonactive_bubble_check.php");
 					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>
-		<?php
-		//Count the amount of the item in the cart
-			
-			$sql = $conn->query("SELECT * FROM cart");
-			$row_cnt = $sql->num_rows;
-			$cart_count = $row_cnt;
-		?>
-		<div class="cart_div">
-			<a href="cart.php"><img src="cart-icon.png" /> Cart<span>
-			<?php echo $cart_count; ?></span></a>
-		</div>
 		</nav>
 	</header>
 

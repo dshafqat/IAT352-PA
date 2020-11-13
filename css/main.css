@@ -849,26 +849,94 @@ span.pay_price {
   right: 0;
 }
 
-#cartlist{
+.cartlist{
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  margin-top: 100px;
+  margin-left: 10px;
 }
 
-#cartlist td, #cartlist th {
+.cartlist td, #cartlist th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#cartlist tr:nth-child(even){background-color: #f2f2f2;}
+.cartlist tr:nth-child(even){background-color: #f2f2f2;}
 
-#cartlist tr:hover {background-color: #ddd;}
+.cartlist tr:hover {background-color: #ddd;}
 
-#cartlist th {
+.cartlist th {
   padding-top: 12px;
   padding-bottom: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: left;
-  background-color: #013220;
+  background-color: #99844b;
   color: white;
+  text-align: center;
 }
 
+.tddate{
+  text-align: center;
+}
+
+.cartsubmit {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #b89c56;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 8px;
+  width: 150px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.cartsubmit span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.cartsubmit span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.cartsubmit:hover span {
+  padding-right: 25px;
+}
+
+.cartsubmit:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.cartremove {
+  background-color: #b89c56;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 6px 15px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cartremove:hover {
+  opacity: 1
+}

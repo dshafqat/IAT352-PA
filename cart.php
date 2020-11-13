@@ -29,23 +29,15 @@ require 'config.php';
 				<ul>
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
-					<li><a href="sign-in.php">Account</a></li>
+					<li><a href="sign-up.php">Account</a></li>
 					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>
 
 		</nav>
 	</header>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 <body>
-
-<div class="cartform">
-<div id="cartlist">
-
+<div class="cartlist">
 	<!-- Connect to the cart table from the database -->
 <?php
 $sql = $conn->query("SELECT * FROM cart");
@@ -71,14 +63,14 @@ if($row_cnt > 0){
 	?>
 <!-- Output the data from the table -->	
 <tr>
-	<td><img src="<?= $row['product_image']; ?>" width="50" height="70" /></td>
-	<td><?= $row['product_name']; ?>
+	<td class=tddate><img src="<?= $row['product_image']; ?>" width="50" height="70" /></td>
+	<td class=tddate><?= $row['product_name']; ?>
 		<form method='post' action=''>
 			<input type='hidden' name='code' value="<?php echo $row['product_code']; ?>" />
 			<!--<button onclick="removeitem()" type='submit' class='remove'>Remove Item</button>-->
 		</form>
 	</td>
-<td><?= $row['qty']; ?></td>
+<td class=tddate><?= $row['qty']; ?></td>
 <!--	<script>
 		function removeitem() {
 		  var txt;
@@ -104,8 +96,8 @@ $code=$row['product_code'];
 ?>-->
 <!-- Display the price and calculate the total price-->
 <?php $price=(float)$row['product_price'];?>
-<td><?php echo "$".$price; ?></td>
-<td><?php echo "$".$price*$row['qty']; ?></td>
+<td class=tddate><?php echo "$".$price; ?></td>
+<td class=tddate><?php echo "$".$price*$row['qty']; ?></td>
 </tr>
 
 <?php
@@ -121,14 +113,13 @@ $total_price += ($price*$row['qty']);
 	<td colspan="5" align="right">
 
 	<form method="post" action="">
-	<input name="remove_button" type="submit" value=" Clear Cart " />
-    <input name="submit_button" type="submit" value=" Place Order " />
+	<button class="cartremove" name="remove_button"> Remove Items</button>
+	<button class="cartsubmit" name="submit_button" style="vertical-align:middle"><span>Place Order </span></button>
 </form>
 
-</td>
+	</td>
 </tr>
 
-<div>
 <!-- Switch to other page when submit the cart-->
 <?php
 	if(isset($_POST['submit_button']))
@@ -149,20 +140,17 @@ $total_price += ($price*$row['qty']);
 
 	}
 ?>
-</tbody>
-</table> 
-  <?php  
-}
-else{
-//Show when the table is empty	
- echo "<h3>Your cart is empty!</h3>";
- }
+</table>
+ <?php  
+	}
+	else{
+	//Show when the table is empty	
+	 echo "<h3>Your cart is empty!</h3>";
+	 }
 ?>
-</div>
  
 <div style="clear:both;"></div>
  
-<div class="message_box" style="margin:10px 0px;">
 </div>
 </body>
 
