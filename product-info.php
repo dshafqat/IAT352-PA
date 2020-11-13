@@ -34,6 +34,7 @@ require 'config.php';
 				</ul>
 			</div>
 		<?php
+		//Count the amount of the item in the cart
 			$sql = $conn->query("SELECT * FROM cart");
 			$row_cnt = $sql->num_rows;
 			$cart_count = $row_cnt;
@@ -51,6 +52,7 @@ require 'config.php';
 		<section class="main_container">
 			<div class="main_store_box">	
 
+	<!-- Read and store the value from the same row by using id for later use-->
 				<?php
 				$isTouch = isset($_GET['uid']);
 				if($isTouch){
@@ -82,13 +84,6 @@ require 'config.php';
 			<div class="main_store_box">
 				<div id="message"></div>
 				<h3 class="style_text"><?= $postname; ?></h3>
-			<script>
-				function myFunction() {
-				  var x = localStorage.getItem("selectedid");
-				  document.getElementById("demo").innerHTML = x;
-				}
-
-			</script>
 
 				<form action="" method="post">
 				<p><?= $postinfo; ?></p>
@@ -163,29 +158,8 @@ require 'config.php';
 			<p class="bottomNav_p"> @2020 Copyright - IAT352 - PA1</p>
 		</div>
 	</Footer>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$(".addItemBtn").click(function(e){
-			echo 'alert(message successfully sent)';
-			e.preventDefault();
-			var $form = $(this).closest(".form-submit");
-			var pid = $form.find(".pid").val();
-			var pname = $form.find(".pname").val();
-			var pprice = $form.find(".pprice").val();
-			var pimage = $form.find(".pimage").val();
-			var pcode = $form.find(".pcode").val();
 
-			$.ajax({
-				url: 'cartaction.php',
-				method: 'post';
-				data: {pid:pid,pname:pname,pprice:pprice,pimage:pimage,pcode:pcode},
-				success:function(response){
-					$("message").html(response);
-				}
-			});
-		});
-	});
-</script>
+	<!-- Insert the row into the cart table -->
 <?php
 if (isset($_REQUEST['qty'])) {	
 $sql = $conn->query("SELECT * FROM cart WHERE product_code='$code'");
