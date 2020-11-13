@@ -29,7 +29,7 @@ require 'config.php';
 				<ul>
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
-					<li><a href="sign-up.php">Account</a></li>
+					<li><a href="sign-in.php">Account</a></li>
 					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>
@@ -118,7 +118,7 @@ $total_price += ($price*$row['qty']);
 	<td colspan="5" align="right">
 
 	<form method="post" action="">
-	<input name="remove_button" type="submit" value=" Remove Items " />
+	<input name="remove_button" type="submit" value=" Clear Cart " />
     <input name="submit_button" type="submit" value=" Place Order " />
 </form>
 

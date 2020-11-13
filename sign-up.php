@@ -24,7 +24,7 @@
 				<ul>
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
-					<li><a href="sign-up.php">Account</a></li>
+					<li><a href="sign-in.php">Account</a></li>
 					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>

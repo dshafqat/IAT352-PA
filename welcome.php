@@ -24,8 +24,8 @@
 
 		<div class="col-md-12" align="center">
  
-		 <h1>Congrats! You are now a memeber</h1>
-		 <a href="index.php" class="welcome-btn">Return to Menu</a>
+		 <h1>Congrats! You are now a memeber, sign in now</h1>
+		 <a href="sign-in.php" class="welcome-btn">Sign In</a>
 
 		</div>
 
