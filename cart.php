@@ -41,7 +41,6 @@ require 'config.php';
 	<!-- Connect to the cart table from the database -->
 <?php
 $sql = $conn->query("SELECT * FROM cart");
-//Count the row for the table, start the loop and print the list if the table is not empty
 $row_cnt = $sql->num_rows;
 if($row_cnt > 0){
     $total_price = 0;
@@ -55,13 +54,11 @@ if($row_cnt > 0){
 		<th>UNIT PRICE</th>
 		<th>ITEMS TOTAL</th>
 	</tr> 
-<!-- Connect the table from the database -->
 	<?php
 		$sql="SELECT * FROM cart";
 		$result=$conn->query($sql);
 		while($row=$result->fetch_assoc()){
 	?>
-<!-- Output the data from the table -->	
 <tr>
 	<td class=tddate><img src="<?= $row['product_image']; ?>" width="50" height="70" /></td>
 	<td class=tddate><?= $row['product_name']; ?>
@@ -83,8 +80,8 @@ if($row_cnt > 0){
 	  } 
 	}
 	</script>
--->
-<!--
+
+
 <?php
 $code=$row['product_code'];
 	if (isset($_REQUEST['setqty'])) {
@@ -93,8 +90,8 @@ $code=$row['product_code'];
 	$sql2 = "UPDATE cart SET qty = '$setqty' WHERE product_code = '$thiscode'";
 	//$result = $conn->query($sql2);
 }
-?>-->
-<!-- Display the price and calculate the total price-->
+?>
+</td>
 <?php $price=(float)$row['product_price'];?>
 <td class=tddate><?php echo "$".$price; ?></td>
 <td class=tddate><?php echo "$".$price*$row['qty']; ?></td>
@@ -131,7 +128,6 @@ $total_price += ($price*$row['qty']);
 	   
 	}
 
-//Clean the table when click on the remove button
 	if(isset($_POST['remove_button']))
 	{
 	    mysqli_query($conn, 'TRUNCATE TABLE `cart`');
@@ -144,8 +140,8 @@ $total_price += ($price*$row['qty']);
  <?php  
 	}
 	else{
-	//Show when the table is empty	
 	 echo "<h3>Your cart is empty!</h3>";
+	//Show when the table is empty	
 	 }
 ?>
  
