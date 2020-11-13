@@ -16,6 +16,24 @@
 
 </head>
 
+<header>
+    <nav>
+      <div class="logo">  
+        <img src="img/logo.png" alt="Brand design / Logo">
+      </div>
+
+      <div class="menu">
+        <ul>
+          <li><a href="home.php">Home</a></li>
+          <li><a href="index.php">Menu</a></li>
+          <li><a href="sign-in.php">Account</a></li>
+          <li><a href="cart.php">Cart</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+
 <body>
 
 

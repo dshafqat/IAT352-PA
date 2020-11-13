@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+
 ?>
 <!DOCTYPE html>
 
@@ -35,6 +36,7 @@ require 'config.php';
 			</div>
 		<?php
 		//Count the amount of the item in the cart
+			
 			$sql = $conn->query("SELECT * FROM cart");
 			$row_cnt = $sql->num_rows;
 			$cart_count = $row_cnt;
@@ -54,6 +56,9 @@ require 'config.php';
 
 	<!-- Read and store the value from the same row by using id for later use-->
 				<?php
+
+
+
 				$isTouch = isset($_GET['uid']);
 				if($isTouch){
 					$_SESSION['uid'] = $_GET['uid'];
@@ -158,6 +163,8 @@ require 'config.php';
 			<p class="bottomNav_p"> @2020 Copyright - IAT352 - PA1</p>
 		</div>
 	</Footer>
+
+
 
 	<!-- Insert the row into the cart table -->
 <?php
