@@ -88,24 +88,24 @@ $choice = $_REQUEST["choice"];
 			exit("*Passwords missmatch!");
 	}
 
- 	if ($name == "" || $email == "" || $password == "" || $choice =="")  {
-
-		// If missing fields echo this message
-		exit("*Please complete the form");
-
-	}
-
 	//check if the username already exist in the database
 	$sql2 = $conn->query("SELECT * FROM users WHERE name='$name'");
 	$row_cnt2 = $sql2->num_rows;
 	if($row_cnt2 > 0){
 	    exit("*Another user with this username already exists, please try different name*");
 	}
+
 	//check if the email already exist in the database
 	$sqli = $conn->query("SELECT * FROM users WHERE email='$email'");
 	$row_cnt1 = $sqli->num_rows;
 	if($row_cnt1 > 0){
 	    exit("*Another user with this email already exists, please try different email*");
+	}
+
+	
+ 	if ($name == "" || $email == "" || $password == "" || $choice =="")  {
+		// If missing fields echo this message
+		exit("*Please complete the form");
 	}
 	// After form is completed, redirect to welcome.php to display text otherwise display error
 	
