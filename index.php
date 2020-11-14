@@ -150,7 +150,8 @@ session_start();
 		</div>
 	</div>
 </div>
-<!-- Call the function for filter-->
+<!-- Call the function for filter, code learnt from https://www.mostlikers.com/2016/10/brand-size-checkbox-search-filter-using-php-jquery.html?fbclid=IwAR2sEq_fMdwj3gwa0G-rsES5wT4UZ_9AfyUMVxoAhbzVoFYRp99G4i1yXPg-->
+
 <script type="text/javascript">
 
 	$(document).ready(function(){
