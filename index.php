@@ -1,6 +1,7 @@
 <!-- Please import the sql file in the folder to see the list-->
 <?php
 require 'config.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +39,9 @@ require 'config.php';
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
 					<li><a href="sign-in.php">Account</a></li>
-					<li><a href="cart.php">Cart</a></li>
+					<?php if (isset($_SESSION['name'])) { ?>
+						<li><a href="cart.php">Cart</a></li>
+					<?php } ?>
 				</ul>
 			</div>
 

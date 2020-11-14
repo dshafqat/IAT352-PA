@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 include("nonactive_bubble_check.php");
-
+session_start();
 ?>
 <!DOCTYPE html>
 
@@ -158,11 +158,11 @@ if($row_cnt > 0){
 	echo "<script type='text/javascript'>alert('$message');</script>";
 }else{
 	$qty = $_REQUEST["qty"];
-$sqli = "INSERT INTO `cart` (product_name, product_price, product_image, qty, product_code)
-
-VALUES ('$postname', '$price','$image', '$qty', '$code')";
-$result = $conn->query($sqli);
-$message = "Product is added to your cart!";
+	$username = $_SESSION['name'];
+	$sqli = "INSERT INTO `cart` (user_name, product_name, product_price, product_image, qty, product_code)
+		VALUES ('$username', '$postname', '$price','$image', '$qty', '$code')";
+	$result = $conn->query($sqli);
+	$message = "Product is added to your cart!";
 	echo "<script type='text/javascript'>alert('$message');</script>";
 }
 }

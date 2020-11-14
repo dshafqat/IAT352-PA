@@ -1,5 +1,6 @@
 <?php
 require 'config.php';
+session_start();
 ?>
 <!DOCTYPE html>
 
@@ -29,7 +30,7 @@ require 'config.php';
 				<ul>
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
-					<li><a href="sign-up.php">Account</a></li>
+					<li><a href="sign-in.php">Account</a></li>
 					<li><a href="cart.php">Cart</a></li>
 				</ul>
 			</div>
@@ -40,7 +41,8 @@ require 'config.php';
 <div class="cartlist">
 	<!-- Connect to the cart table from the database -->
 <?php
-$sql = $conn->query("SELECT * FROM cart");
+	$username = $_SESSION['name'];
+	$sql = $conn->query("SELECT * FROM cart WHERE user_name='$username'");
 //Count the row for the table, start the loop and print the list if the table is not empty
 $row_cnt = $sql->num_rows;
 if($row_cnt > 0){
@@ -57,7 +59,7 @@ if($row_cnt > 0){
 	</tr> 
 <!-- Connect the table from the database -->
 	<?php
-		$sql="SELECT * FROM cart";
+		$sql="SELECT * FROM cart WHERE user_name='$username'";
 		$result=$conn->query($sql);
 		while($row=$result->fetch_assoc()){
 	?>
@@ -70,7 +72,9 @@ if($row_cnt > 0){
 			<!--<button onclick="removeitem()" type='submit' class='remove'>Remove Item</button>-->
 		</form>
 	</td>
-<td class=tddate><?= $row['qty']; ?></td>
+<td class=tddate><?= $row['qty']; 
+     echo $name;
+     ?></td>
 <!--	<script>
 		function removeitem() {
 		  var txt;
@@ -134,7 +138,9 @@ $total_price += ($price*$row['qty']);
 //Clean the table when click on the remove button
 	if(isset($_POST['remove_button']))
 	{
-	    mysqli_query($conn, 'TRUNCATE TABLE `cart`');
+     $name = $_SESSION['name'];
+      $sql = "DELETE FROM cart WHERE user_name='$name'";
+      $result = $conn->query($sql);
 	    header("Location: " . $_SERVER['PHP_SELF']);
 	    exit();
 
