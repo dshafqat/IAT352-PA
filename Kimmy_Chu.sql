@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 12, 2020 at 04:58 AM
+-- Generation Time: Nov 14, 2020 at 03:36 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.33
 
@@ -32,21 +32,22 @@ USE `Kimmy_Chu`;
 DROP TABLE IF EXISTS `cart`;
 CREATE TABLE IF NOT EXISTS `cart` (
   `cid` int(255) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(50) NOT NULL,
   `product_name` varchar(255) NOT NULL,
   `product_price` varchar(255) NOT NULL,
   `product_image` varchar(255) NOT NULL,
   `qty` int(11) NOT NULL,
   `product_code` varchar(11) NOT NULL,
   PRIMARY KEY (`cid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cart`
 --
 
-INSERT INTO `cart` (`cid`, `product_name`, `product_price`, `product_image`, `qty`, `product_code`) VALUES
-(1, 'Original Milk Tea', '4.0', 'img/bubbleTea/bubble_tea_1.png', '2', 'P001');
-COMMIT;
+INSERT INTO `cart` (`cid`, `user_name`, `product_name`, `product_price`, `product_image`, `qty`, `product_code`) VALUES
+(1, 'aaa', 'Thai Tea', '5.5', 'img/bubbleTea/bubble_tea_4.png', 4, 'P004');
+
 -- --------------------------------------------------------
 
 --
@@ -103,15 +104,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   `choice` varchar(255) NOT NULL,
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`uid`, `name`, `email`, `password`, `choice`) VALUES
-(1, 'aaa', 'bbb@ccc', 'e2fc714c4727ee9395f324cd2e7f331f', 'BubbleTea'),
-(2, 'bob', 'bob@bobs.com', '81dc9bdb52d04dc20036dbd8313ed055', 'MilkTea');
+(2, 'bob', 'bob@bobs.com', '81dc9bdb52d04dc20036dbd8313ed055', 'MilkTea'),
+(12, 'aaa', 'bbb@ccc', 'aaa', 'BubbleTea'),
+(13, 'test', 'testing@ahhh.com', 'aaa', 'BubbleTea');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
