@@ -29,11 +29,11 @@
         
       require('config.php');
       // include("active_session_check.php");
-     if (isset($_REQUEST['email'])) {
+     if (isset($_GET['name'])) {
     
-     $name = $_REQUEST["name"];
+     $name = $_GET["name"];
       
-      $sql = "DELETE FROM users WHERE name='".$_GET['name']."'";
+      $sql = "DELETE FROM 'users' WHERE name='".$_GET['name']."'";
     if ($conn->query($sql) === TRUE) {
       echo "Record deleted successfully";
 }   else {
