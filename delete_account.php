@@ -42,9 +42,6 @@ session_start();
 }
 
 }
-else {
-        echo "Error deleting record: ";
-}
 ?>
 
 <br>
