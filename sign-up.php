@@ -79,11 +79,6 @@ $password = $_REQUEST["password"];
 $ReEnterPassword = $_REQUEST["RepassWord"];
 $choice = $_REQUEST["choice"];
 
-$sql = "INSERT into `users` (name, email, password, choice)
-
-VALUES ('$name',  '$email','$password', '$choice')";
-
-$result = $conn->query($sql);
 
 // Open connection to the $file in writing mode
 
@@ -99,6 +94,19 @@ $result = $conn->query($sql);
 		exit("*Please complete the form");
 
 	}
+
+	//check if the username already exist in the database
+	$sql2 = $conn->query("SELECT * FROM users WHERE name='$name'");
+	$row_cnt2 = $sql2->num_rows;
+	if($row_cnt2 > 0){
+	    exit("*Another user with this username already exists, please try different name*");
+	}
+	//check if the email already exist in the database
+	$sqli = $conn->query("SELECT * FROM users WHERE email='$email'");
+	$row_cnt1 = $sqli->num_rows;
+	if($row_cnt1 > 0){
+	    exit("*Another user with this email already exists, please try different email*");
+	}
 	// After form is completed, redirect to welcome.php to display text otherwise display error
 	
 
@@ -109,9 +117,12 @@ $result = $conn->query($sql);
 
 
 	 else {
-	header("Location:welcome.php");
-    exit;
-	echo "Error, could not open file for writing.";
+		$sql = "INSERT into `users` (name, email, password, choice)
+		VALUES ('$name',  '$email','$password', '$choice')";
+		$result = $conn->query($sql);
+		header("Location:welcome.php");
+    	exit;
+		echo "Error, could not open file for writing.";
 	}
 
 }
