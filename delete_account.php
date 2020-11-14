@@ -1,4 +1,7 @@
-
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,11 +32,9 @@
         
       require('config.php');
       // include("active_session_check.php");
-     if (isset($_GET['name'])) {
-    
-     $name = $_GET["name"];
-      
-      $sql = "DELETE FROM 'users' WHERE name='".$_GET['name']."'";
+     if (isset($_GET['user'])) {
+     $name = $_GET['user'];
+      $sql = "DELETE FROM users WHERE name='$name'";
     if ($conn->query($sql) === TRUE) {
       echo "Record deleted successfully";
 }   else {

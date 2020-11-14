@@ -46,11 +46,10 @@
 <div class="container-fluid">
 
 		<div class="col-md-12" align="center">
- 
 		 <h1 class="display-3">Welcome to your account, <?php echo $_SESSION['name']; ?>!</h1>
 		 <a href="index.php" class="welcome-btn">Shop Now</a>
      <a href="logout.php" class="welcome-btn">log out</a>
-     <a href="delete_account.php" class="welcome-btn">Delete account</a>
+     <a href="delete_account.php?user=<?php echo $_SESSION['name'];?>" class="welcome-btn">Delete account</a>
 		</div>
 
 </div>
