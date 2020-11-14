@@ -47,7 +47,7 @@ session_start();
 <br>
 <br>
 <br>
-		 <a href="home.php" class="welcome-btn">Return to Home</a>
+		 <a href="logout.php" class="welcome-btn">Return to Home</a>
 
 		</div>
 
