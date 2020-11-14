@@ -29,27 +29,22 @@
         
       require('config.php');
       // include("active_session_check.php");
-     if (isset($_GET['name'])) {
     
-     $name = $_GET["name"];
-      
-      $sql = "DELETE FROM 'users' WHERE name='".$_GET['name']."'";
+
+      $sql = "DELETE FROM users WHERE name='aa'";
     if ($conn->query($sql) === TRUE) {
       echo "Record deleted successfully";
 }   else {
         echo "Error deleting record: ";
-}
 
-}
-else {
-        echo "Error deleting record: ";
+
 }
 ?>
 
 <br>
 <br>
 <br>
-		 <a href="home.php" class="welcome-btn">Return to Home</a>
+		 <a href="logout.php" class="welcome-btn">Return to Home</a>
 
 		</div>
 
