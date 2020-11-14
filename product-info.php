@@ -152,25 +152,25 @@ session_start();
 	<!-- Insert the row into the cart table -->
 <?php
 if (isset($_REQUEST['qty'])) {	
-	$username = $_SESSION['name'];
-	$sql = $conn->query("SELECT * FROM cart WHERE user_name='$username' AND product_code='$code'");
-	$row_cnt = $sql->num_rows;
-	if($row_cnt > 0){
-	    $message = "Product is already added to your cart!";
-		echo "<script type='text/javascript'>alert('$message');</script>";
-		}else{
-			$qty = $_REQUEST["qty"];
-			if($qty != ""){
+$qty = $_REQUEST["qty"];
+	if ($qty == ""){
+		$message = "Please input the quantity!";
+		echo "<script type='text/javascript'>alert('$message');</script>";					
+	}else{
+		$username = $_SESSION['name'];
+		$sql = $conn->query("SELECT * FROM cart WHERE user_name='$username' AND product_code='$code'");
+		$row_cnt = $sql->num_rows;
+		if($row_cnt > 0){
+		    $message = "Product is already added to your cart!";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+			}else{
 				$sqli = "INSERT INTO `cart` (user_name, product_name, product_price, product_image, qty, product_code)
-					VALUES ('$username', '$postname', '$price','$image', '$qty', '$code')";
+						VALUES ('$username', '$postname', '$price','$image', '$qty', '$code')";
 				$result = $conn->query($sqli);
 				$message = "Product is added to your cart!";
-				echo "<script type='text/javascript'>alert('$message');</script>";				
-			}else{
-				$message = "Please input the quantity!";
-				echo "<script type='text/javascript'>alert('$message');</script>";					
+				echo "<script type='text/javascript'>alert('$message');</script>";
 			}
-		}
+	}
 }
 
 ?>
