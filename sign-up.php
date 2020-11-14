@@ -61,6 +61,9 @@
 
 				<input type="submit" name="submit" value="Submit" />
 				</form>
+
+				<a href="sign-in.php">Already have an account? Sign in now!</a>
+
 				</div>
 			
 
@@ -102,7 +105,7 @@ $choice = $_REQUEST["choice"];
 	    exit("*Another user with this email already exists, please try different email*");
 	}
 
-	
+
  	if ($name == "" || $email == "" || $password == "" || $choice =="")  {
 		// If missing fields echo this message
 		exit("*Please complete the form");
