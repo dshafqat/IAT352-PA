@@ -936,6 +936,7 @@ span.pay_price {
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .cartremove:hover {
@@ -987,4 +988,24 @@ span.pay_price {
 
 .qtytext:focus {
   border: 2.5px solid #ad9144;
+}
+
+.shop {
+  background-color: #b89c56;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  padding: 6px 15px;
+  text-align: center;
+  font-size: 18px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shop:hover {
+  opacity: 1
 }

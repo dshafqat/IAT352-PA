@@ -23,7 +23,9 @@
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
 					<li><a href="sign-in.php">Account</a></li>
+					<?php if (isset($_SESSION['name'])) { ?>
 					<li><a href="cart.php">Cart</a></li>
+					<?php } ?>
 				</ul>
 			</div>
 
@@ -40,6 +42,7 @@
 				<div class="banner-text">
 					<h2>Check Out Our Summer Specials</h2>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+				 <a class="shop" href="index.php">SHOP NOW</a>
 				</div>
 			</div>
 		</div>
@@ -71,7 +74,7 @@
 					</div>
 
 					<div class="main_box">
-						<a href="product2.html"><img class="main_box_img1" src="img/bubbleTea/bubble_tea_2.png" alt="Bubble Tea image."></a>
+						<a href="product-info.php"><img class="main_box_img1" src="img/bubbleTea/bubble_tea_2.png" alt="Bubble Tea image."></a>
 					</div>
 
 				</div>  
@@ -80,7 +83,7 @@
 		<section>
 				<div class="main_container">
 					<div class="main_box">
-						<a href="product3.html"><img class="main_box_img2" src="img/bubbleTea/bubble_tea_3.png" alt="Bubble Tea image."></a>
+						<a href="product-info.php"><img class="main_box_img2" src="img/bubbleTea/bubble_tea_3.png" alt="Bubble Tea image."></a>
 					</div>
 
 					<div class="main_box">
@@ -128,7 +131,7 @@
 					</div>
 
 					<div class="main_box">
-						<a href="product2.html"><img class="main_box_img1" src="img/bubbleTea/bubble_tea_2.png" alt="Bubble Tea image."></a>
+						<a href="product-info.php"><img class="main_box_img1" src="img/bubbleTea/bubble_tea_2.png" alt="Bubble Tea image."></a>
 					</div>
 
 				</div>  
