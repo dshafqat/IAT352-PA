@@ -83,8 +83,9 @@ session_start();
 				<form action="" method="post">
 				<p><?= $postinfo; ?></p>
 				<p>$ <?= $price; ?> </p>
-				<input type="text" name="qty"  placeholder="Enter Quantity"  value="<?php  $qty;?>" >
-					<input type="submit" name="submit" value="Submit" />
+				<input class="qtytext" type="text" name="qty"  placeholder="Enter Quantity"  value="<?php  $qty;?>" >
+					<button class="cartbtn cart" name="submit"> Add to Cart</button>
+					<!--<input class="btn cart" type="submit" name="submit" value="Submit" />-->
 				</form> 
 			</div>
 		</section>
@@ -151,20 +152,25 @@ session_start();
 	<!-- Insert the row into the cart table -->
 <?php
 if (isset($_REQUEST['qty'])) {	
-$sql = $conn->query("SELECT * FROM cart WHERE product_code='$code'");
-$row_cnt = $sql->num_rows;
-if($row_cnt > 0){
-    $message = "Product is already added to your cart!";
-	echo "<script type='text/javascript'>alert('$message');</script>";
-}else{
-	$qty = $_REQUEST["qty"];
 	$username = $_SESSION['name'];
-	$sqli = "INSERT INTO `cart` (user_name, product_name, product_price, product_image, qty, product_code)
-		VALUES ('$username', '$postname', '$price','$image', '$qty', '$code')";
-	$result = $conn->query($sqli);
-	$message = "Product is added to your cart!";
-	echo "<script type='text/javascript'>alert('$message');</script>";
-}
+	$sql = $conn->query("SELECT * FROM cart WHERE user_name='$username' AND product_code='$code'");
+	$row_cnt = $sql->num_rows;
+	if($row_cnt > 0){
+	    $message = "Product is already added to your cart!";
+		echo "<script type='text/javascript'>alert('$message');</script>";
+		}else{
+			$qty = $_REQUEST["qty"];
+			if($qty != ""){
+				$sqli = "INSERT INTO `cart` (user_name, product_name, product_price, product_image, qty, product_code)
+					VALUES ('$username', '$postname', '$price','$image', '$qty', '$code')";
+				$result = $conn->query($sqli);
+				$message = "Product is added to your cart!";
+				echo "<script type='text/javascript'>alert('$message');</script>";				
+			}else{
+				$message = "Please input the quantity!";
+				echo "<script type='text/javascript'>alert('$message');</script>";					
+			}
+		}
 }
 
 ?>

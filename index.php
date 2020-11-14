@@ -132,7 +132,7 @@ session_start();
 										Tea : <?= $row['tea']; ?><br>
 										Add_ons : <?= $row['add_on']; ?><br>
 									</p>
-									<a onclick="myFunction(<?= $row['id']; ?>)" class="btn cart">View</a>
+									<a onclick="myFunction(<?= $row['id']; ?>)" class="btn view">View</a>
 									<div id="pickid"></div>
 
 									<script>

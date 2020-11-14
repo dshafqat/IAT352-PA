@@ -802,12 +802,13 @@ span.pay_price {
         background: #ccb476;
         color: #fff;
       }
-      .cart:before {
+      .view:before {
         font-family: 'Font Awesome 5 Free';
-        content: "\f07a";
+        content: "\f002";
         font-weight: 900;
         right: 10px;
       }
+
 
 
      
@@ -939,4 +940,51 @@ span.pay_price {
 
 .cartremove:hover {
   opacity: 1
+}
+.cartbtn {
+  background: white;
+  border: none;
+  color: #b89c56;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 50px;
+}
+.cart {
+  background-color: white; 
+  color: #b89c56; 
+  border: 2px solid #b89c56;
+}
+
+.cart:hover {
+  background-color: #b89c56;
+  color: white;
+}
+.cart:before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f217";
+  font-weight: 900;
+  right: 10px;
+}
+.qtytext {
+  width: 50%;
+  padding: 6px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #dbd2b2;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  color:#877236;
+}
+
+.qtytext:focus {
+  border: 2.5px solid #ad9144;
 }

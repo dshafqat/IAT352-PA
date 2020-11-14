@@ -126,9 +126,11 @@ $total_price += ($price*$row['qty']);
 
 <!-- Switch to other page when submit the cart-->
 <?php
+     $name = $_SESSION['name'];
 	if(isset($_POST['submit_button']))
 	{
-	    mysqli_query($conn, 'TRUNCATE TABLE `cart`');
+      	$sql = "DELETE FROM cart WHERE user_name='$name'";
+      	$result = $conn->query($sql);
 	    header("Location: " . $_SERVER['PHP_SELF']);
 	    header("Location:orderConfirmation.php");
 	    
@@ -138,7 +140,6 @@ $total_price += ($price*$row['qty']);
 //Clean the table when click on the remove button
 	if(isset($_POST['remove_button']))
 	{
-     $name = $_SESSION['name'];
       $sql = "DELETE FROM cart WHERE user_name='$name'";
       $result = $conn->query($sql);
 	    header("Location: " . $_SERVER['PHP_SELF']);
