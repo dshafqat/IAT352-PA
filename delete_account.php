@@ -52,6 +52,8 @@ session_start();
      if (isset($_GET['user'])) {
      $name = $_GET['user'];
       $sql = "DELETE FROM users WHERE name='$name'";
+      $sql2 = "DELETE FROM cart WHERE user_name='$name'";
+      $result = $conn->query($sql2);
     if ($conn->query($sql) === TRUE) {
       echo "Record deleted successfully";
 }   else {
