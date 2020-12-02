@@ -77,20 +77,18 @@
 			$result = $conn->query($sql); 
 			$rows = mysqli_num_rows($result);
 
-		//if row equal 1 means user does exist
+		//User exists if row equals 1
 			if ($rows == 1) {
 				$_SESSION['email'] = $email;
 				$_SESSION['name'] = $name;
 				header("Location:login_successful.php");
 			} else {
 
-				//else means user enters the wrong username or password
+				//else user entered  wrong username or password
 				echo "<div class='form'>
 					<h3>Email or password is incorrect.</h3>
 				</div>";
 
-
-				// echo "<p>Not registered yet? <a href='register.php'>Register Here</a></p>";
 			}
 		}
 

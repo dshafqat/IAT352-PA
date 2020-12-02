@@ -57,10 +57,15 @@
 
 					include 'config.php';
 					$product_name = "";
+					$tea = "";
+					$price_r = "";
+					$product_image = "";
+					$detail_image = "";
+					$information = "";
 
+					
 
-
-					$sqla = $conn->query("SELECT product_name FROM products");
+					$sqla = $conn->query("SELECT product_name, tea, price_r, product_image, detail_image, information FROM products");
 
 					?>
 
@@ -72,7 +77,15 @@
 				while($rows = $sqla->fetch_assoc())
 				{
 
+				$tea = $rows['tea'];
 				$product_name = $rows['product_name'];
+				$price_r = $rows['price_r'];
+				$product_image = $rows['product_image'];
+				$detail_image = $rows['detail_image'];
+				$information = $rows['information'];
+
+
+
 				 echo" <option value='$product_name'>$product_name</option>";
         }
 				  ?>
@@ -149,8 +162,11 @@ $choice = $_REQUEST["choice"];
 		$sql = "INSERT into `users` (name, email, password, choice)
 		VALUES ('$name',  '$email','$password', '$choice')";
 		$result = $conn->query($sql);
-		$sql = "INSERT into `preference` (choice)
-		VALUES ('$choice')";
+
+
+		$sql = "INSERT into `preference` (choice, tea, price_r, product_image, detail_image, information)
+		VALUES ('$choice', '$tea', '$price_r', '$product_image', '$detail_image', '$information')";
+
 		$result = $conn->query($sql);
 		header("Location:welcome.php");
     	exit;
