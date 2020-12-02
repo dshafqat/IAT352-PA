@@ -47,8 +47,6 @@ session_start();
 	<!-- Read and store the value from the same row by using id for later use-->
 				<?php
 
-
-
 				$isTouch = isset($_GET['uid']);
 				if($isTouch){
 					$_SESSION['uid'] = $_GET['uid'];

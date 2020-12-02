@@ -62,6 +62,7 @@
 					$product_image = "";
 					$detail_image = "";
 					$information = "";
+				
 
 					
 
@@ -164,8 +165,8 @@ $choice = $_REQUEST["choice"];
 		$result = $conn->query($sql);
 
 
-		$sql = "INSERT into `preference` (choice, tea, price_r, product_image, detail_image, information)
-		VALUES ('$choice', '$tea', '$price_r', '$product_image', '$detail_image', '$information')";
+		$sql = "INSERT into `preference` (choice, tea, price_r, product_image, detail_image, information, email)
+		VALUES ('$choice', '$tea', '$price_r', '$product_image', '$detail_image', '$information', '$email')";
 
 		$result = $conn->query($sql);
 		header("Location:welcome.php");

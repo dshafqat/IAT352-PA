@@ -69,6 +69,60 @@ session_start();
 			</div>
 		</section>  <!-- End of the Big image slideshow section -->
 
+		<section> 
+
+			<h2> Order your favourite again! </h2>
+
+			<?php
+
+				$isTouch = isset($_GET['email']);
+				if($isTouch){
+					$_SESSION['email'] = $_GET['email'];
+					$somevar = $_GET['email'];
+				}else{
+					$somevar = $_SESSION['email'];
+				}
+
+
+				$query = "SELECT * FROM preference";
+
+				$result = $conn->query($query);
+				while($row = $result->fetch_assoc()) {
+
+				    if ($row["email"] == $somevar) {
+				    	$product_name = $row['choice'];
+				    	$detail_image = $row['detail_image'];
+				    	$information = $row['information'];
+				    	$price_r = $row['price_r'];
+				    	$product_image = $row['product_image'];
+
+					}}
+				?>
+
+
+				<h3> <?php echo $product_name ?> </h3>
+				<img class="image_sample_product_styling" src="<?= $product_image; ?>" alt="Product2 Image">
+
+
+				<div class="main_store_box">
+				<div id="message"></div>
+				<h3 class="style_text"><?php $product_name; ?></h3>
+
+				<form action="" method="post">
+				<p><?php $information; ?></p>
+				<p>$ <?php echo $price_r ?> </p>
+				<input class="qtytext" type="text" name="qty"  placeholder="Enter Quantity"  value="<?php  $qty;?>" >
+					<button class="cartbtn cart" name="submit"> Add to Cart</button>
+					<!--<input class="btn cart" type="submit" name="submit" value="Submit" />-->
+				</form> 
+			</div>
+
+
+		</section>
+
+
+
+
 		<section class="center_text style_text">
 			<h1>Get Your Summer Special !</h1>
 		</section>
