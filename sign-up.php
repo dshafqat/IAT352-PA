@@ -1,4 +1,7 @@
 <?php session_start(); ?>
+
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -49,12 +52,30 @@
 
 
 					<label for="job">Tea Preference:</label>
+
+					<?php 
+
+					include 'config.php';
+					$product_name = "";
+
+
+
+					$sqla = $conn->query("SELECT product_name FROM products");
+
+					?>
+
+
 				<select id="" name="choice">
 
+				<?php 
 
-				  <option value="BubbleTea">Bubble Tea</option>
-				  <option value="MilkTea">Milk Tea</option>
+				while($rows = $sqla->fetch_assoc())
+				{
 
+				$product_name = $rows['product_name'];
+				 echo" <option value='$product_name'>$product_name</option>";
+        }
+				  ?>
 				</select>
 
 				</fieldset>
@@ -80,7 +101,12 @@ $ReEnterPassword = $_REQUEST["RepassWord"];
 $choice = $_REQUEST["choice"];
 
 
+
+
 // Open connection to the $file in writing mode
+
+
+
 
 	// check if form is valid
 	if ($password != $ReEnterPassword) {
@@ -119,6 +145,9 @@ $choice = $_REQUEST["choice"];
 	 else {
 		$sql = "INSERT into `users` (name, email, password, choice)
 		VALUES ('$name',  '$email','$password', '$choice')";
+		$result = $conn->query($sql);
+		$sql = "INSERT into `preference` (choice)
+		VALUES ('$choice')";
 		$result = $conn->query($sql);
 		header("Location:welcome.php");
     	exit;
