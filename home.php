@@ -52,6 +52,11 @@ session_start();
 					<h2>Check Out Our Summer Specials</h2>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
 				 <a class="shop" href="index.php">SHOP NOW</a>
+
+				 <?php if (isset($_SESSION['name'])) { ?>
+				<a class="shop" href="#favTea">FAVORITE</a>
+					<?php } ?>
+				
 				</div>
 			</div>
 		</div>
@@ -69,7 +74,13 @@ session_start();
 			</div>
 		</section>  <!-- End of the Big image slideshow section -->
 
-		<section> 
+	<?php if (isset($_SESSION['name'])) { ?>
+
+		<section id="favTea"> 
+
+			
+					
+					
 
 			<h2> Order your favourite again! </h2>
 
@@ -120,6 +131,8 @@ session_start();
 
 
 		</section>
+
+			<?php } ?>
 
 
 
