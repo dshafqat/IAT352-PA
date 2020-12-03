@@ -74,15 +74,15 @@ session_start();
 			</div>
 		</section>  <!-- End of the Big image slideshow section -->
 
-	<?php if (isset($_SESSION['name'])) { ?>
+	
+
+	 <?php if (isset($_SESSION['name'])) { ?>
+					
+					
 
 		<section id="favTea"> 
 
-			
-					
-					
-
-			<h2> Order your favourite again! </h2>
+			<h2> Order your favourite tea again! </h2>
 
 			<?php
 
@@ -129,12 +129,37 @@ session_start();
 				</form> 
 			</div>
 
-
 		</section>
 
-			<?php } ?>
+		<?php } ?>
 
 
+
+
+		<?php
+       if (isset($_REQUEST['qty'])) {	
+        $qty = $_REQUEST["qty"];
+	if ($qty == ""){
+		$message = "Please input the quantity!";
+		echo "<script type='text/javascript'>alert('$message');</script>";					
+	}else{
+		$username = $_SESSION['name'];
+		$sql = $conn->query("SELECT * FROM cart WHERE user_name='$username'");
+		$row_cnt = $sql->num_rows;
+		if($row_cnt > 0){
+		    $message = "Product is already added to your cart!";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+			}else{
+				$sqli = "INSERT INTO `cart` (user_name, product_name, product_price, product_image, qty, product_code)
+						VALUES ('$username', '$product_name', '$price_r','$product_image', '$qty', 1)";
+				$result = $conn->query($sqli);
+				$message = "Product is added to your cart!";
+				echo "<script type='text/javascript'>alert('$message');</script>";
+			}
+	}
+}
+
+?>
 
 
 		<section class="center_text style_text">

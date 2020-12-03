@@ -131,6 +131,7 @@ footer p{
   flex:1 1 15rem;
 }
 .main_container{
+  color: black;
   max-width: 1400px;
   margin:40px auto 0 auto;
   display: flex;
