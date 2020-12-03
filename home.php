@@ -101,7 +101,8 @@ session_start();
 
 
 				<h3> <?php echo $product_name ?> </h3>
-				<img class="image_sample_product_styling" src="<?= $product_image; ?>" alt="Product2 Image">
+
+				<img class="image_sample_product_styling" src="<?=$product_image; ?>" alt="Product2 Image">
 
 
 				<div class="main_store_box">

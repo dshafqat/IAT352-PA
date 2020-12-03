@@ -56,17 +56,17 @@
 					<?php 
 
 					include 'config.php';
+
 					$product_name = "";
 					$tea = "";
 					$price_r = "";
 					$product_image = "";
 					$detail_image = "";
 					$information = "";
-				
 
 					
 
-					$sqla = $conn->query("SELECT product_name, tea, price_r, product_image, detail_image, information FROM products");
+					$sqla = $conn->query("SELECT product_name FROM products");
 
 					?>
 
@@ -78,12 +78,8 @@
 				while($rows = $sqla->fetch_assoc())
 				{
 
-				$tea = $rows['tea'];
 				$product_name = $rows['product_name'];
-				$price_r = $rows['price_r'];
-				$product_image = $rows['product_image'];
-				$detail_image = $rows['detail_image'];
-				$information = $rows['information'];
+				
 
 
 
@@ -103,6 +99,14 @@
 			
 
 <!-- Empty variables check-->
+
+
+
+
+
+
+
+
 <?php
 	
 require('config.php');
@@ -116,6 +120,34 @@ $email = $_REQUEST["email"];
 $password = $_REQUEST["password"];
 $ReEnterPassword = $_REQUEST["RepassWord"];
 $choice = $_REQUEST["choice"];
+
+
+
+
+
+
+
+
+$query = "SELECT * FROM products";
+
+$result = $conn->query($query);
+while($row = $result->fetch_assoc()) {
+
+if ($row["product_name"] == $choice) {
+	
+$tea = $row['tea'];
+$price_r = $row['price_r'];
+$product_image = $row['product_image'];
+$detail_image = $row['detail_image'];
+$information = $row['information'];
+
+
+}}
+
+
+
+
+
 
 
 
