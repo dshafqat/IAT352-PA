@@ -51,7 +51,12 @@
   		 <h1 class="display-3">Welcome to your account, <?php echo $name; ?>!</h1>
   		 <a href="index.php" class="welcome-btn">Shop Now</a>
        <a href="logout.php" class="welcome-btn">log out</a>
-       <a href="delete_account.php?user=<?php echo $_SESSION['name'];?>" class="welcome-btn">Delete account</a>
+       <a href="delete_account.php?user=<?php echo $_SESSION['email'];?>" class="welcome-btn">Delete account</a>
+
+        <a href="changePreference.php?user=<?php echo $_SESSION['email'];?>" class="welcome-btn">Change Preference</a>
+
+
+
 		</div>
 
 </div>

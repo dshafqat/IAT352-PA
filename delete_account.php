@@ -49,11 +49,13 @@ session_start();
         
       require('config.php');
       // include("active_session_check.php");
-     if (isset($_GET['user'])) {
-     $name = $_GET['user'];
+     if (isset($_SESSION['name'])) {
+     $name = $_SESSION['name'];
+
       $sql = "DELETE FROM users WHERE name='$name'";
       $sql2 = "DELETE FROM cart WHERE user_name='$name'";
-      $result = $conn->query($sql2);
+      $result = $conn->query($sql);
+
     if ($conn->query($sql) === TRUE) {
       echo "Record deleted successfully";
 }   else {

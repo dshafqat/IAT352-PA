@@ -180,7 +180,7 @@ $qty = $_REQUEST["qty"];
 		<div class="bottomNav">
 			<p class="bottomNav_p">Dawood Shafqat</p>
 			<p class="bottomNav_p">Kwankiu Chu</p>
-			<p class="bottomNav_p"> @2020 Copyright - IAT352 - PA2</p>
+			<p class="bottomNav_p"> @2020 Copyright - IAT352 - PA3</p>
 		</div>
 	</Footer>
 

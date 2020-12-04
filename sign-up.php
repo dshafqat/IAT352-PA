@@ -81,8 +81,6 @@
 				$product_name = $rows['product_name'];
 				
 
-
-
 				 echo" <option value='$product_name'>$product_name</option>";
         }
 				  ?>
@@ -163,12 +161,6 @@ $information = $row['information'];
 			exit("*Passwords missmatch!");
 	}
 
-	//check if the username already exist in the database
-	$sql2 = $conn->query("SELECT * FROM users WHERE name='$name'");
-	$row_cnt2 = $sql2->num_rows;
-	if($row_cnt2 > 0){
-	    exit("*Another user with this username already exists, please try different name*");
-	}
 
 	//check if the email already exist in the database
 	$sqli = $conn->query("SELECT * FROM users WHERE email='$email'");
@@ -215,7 +207,7 @@ $information = $row['information'];
 		<div class="bottomNav">
 			<p class="bottomNav_p">Dawood Shafqat</p>
 			<p class="bottomNav_p">Kwankiu Chu</p>
-			<p class="bottomNav_p"> @2020 Copyright - IAT352 - PA2</p>
+			<p class="bottomNav_p"> @2020 Copyright - IAT352 - PA3</p>
 		</div>
 	</Footer>
 
