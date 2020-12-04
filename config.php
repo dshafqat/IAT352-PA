@@ -7,7 +7,7 @@ $dbname="KIMMY_CHU";
 $name="";
 
 
- $conn = new mysqli("localhost","root","","KIMMY_CHU");
+ $conn = new mysqli("localhost","root","","Kimmy_Chu");
  if($conn->connect_error){
  	die("Connection Failed!".$conn->connect_error);
  }
