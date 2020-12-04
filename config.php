@@ -3,11 +3,11 @@
 $servername="localhost";
 $email="root";
 $password="";
-$dbname="KIMMY_CHU";
+$dbname="kimmy_chu";
 $name="";
 
 
- $conn = new mysqli("localhost","root","","Kimmy_Chu");
+ $conn = new mysqli("localhost","root","","kimmy_chu");
  if($conn->connect_error){
  	die("Connection Failed!".$conn->connect_error);
  }
