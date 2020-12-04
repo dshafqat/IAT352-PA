@@ -76,7 +76,7 @@ session_start();
 
 	
 
-	 <?php if (isset($_SESSION['name'])) { ?>
+	 <?php if (isset($_SESSION['email'])) { ?>
 					
 					
 
