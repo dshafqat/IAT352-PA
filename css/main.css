@@ -1013,10 +1013,3 @@ span.pay_price {
 .list-group-item:hover{
     background-color: #f5e9d3;
 }
-.remove:after {
-  margin-left: 10px;
-  font-family: 'Font Awesome 5 Free';
-  content: "\f00d";
-  font-weight: 900;
-  right: 10px;
-}

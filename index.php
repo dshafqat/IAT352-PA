@@ -111,8 +111,9 @@ session_start();
 
 		</div>
 		<div class="col-lg-9">
+			
 			<input type="text" name="search" class="form-control" id="search" placeholder="Search Products" />
-			<ul class ="list-group" id="result"></ul>
+			<ul class ="list-group" id="searchresult"></ul>
 			<br />
 
 			<h5 class="text-center" id="textChange">All Products</h5>
@@ -161,7 +162,7 @@ session_start();
 <script type="text/javascript">
 
 	$(document).ready(function(){
-
+		//if the check box for the filter is click, use post to process the data in action.php
 		$(".product_check").click(function(){
 
 			var action = 'data';
@@ -188,28 +189,26 @@ session_start();
 			});
 			return filterData;
 		}
+	//empty the list if the input box is empty
 	$('#search').blur(function()
 	{
 	    if( $(this).val().length === 0 ) {
-	        $('#result').empty();
+	        $('#searchresult').empty();
 	    }
 	});
-
+	//Use JSON to show data that match the user's input
 	$('#search').keydown(function(){
-			$('#result').html('');
+			$('#searchresult').html('');
 			var searchField = $('#search').val();
 			var expression = new RegExp(searchField, "i");
 			$.getJSON('data.json', function(data){
 				$.each(data, function(key, value){
 					if(value.name.search(expression) != -1 || value.price.search(expression)!=-1){
-						$('#result').append('<a onclick="myFunction('+value.id+')"><li class="list-group-item"><img src="'+value.image+'" height="40" width="40" class="img-thumbnail" /> &nbsp;<span class="text-muted"> '+value.name+'  &nbsp;&nbsp;|&nbsp;&nbsp; Tea: '+value.tea+' &nbsp;&nbsp;|&nbsp;&nbsp; Add_on: '+value.add_on+' &nbsp;&nbsp;|&nbsp;&nbsp; $ '+value.price+'</span></li></a>');
+						$('#searchresult').append('<a onclick="myFunction('+value.id+')"><li class="list-group-item"><img src="'+value.image+'" height="40" width="40" class="img-thumbnail" /> &nbsp;<span class="text-muted"> '+value.name+'  &nbsp;&nbsp;|&nbsp;&nbsp; Tea: '+value.tea+' &nbsp;&nbsp;|&nbsp;&nbsp; Add_on: '+value.add_on+' &nbsp;&nbsp;|&nbsp;&nbsp; $ '+value.price+'</span></li></a>');
 					}
 				});
 			})
 		});
-	$("#searchclear").click(function(){
-    $("#search").val('');
-});
 });
 </script>
 
