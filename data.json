@@ -1,0 +1,131 @@
+[
+	{
+		"id" : "1",
+		"name" : "Original Milk Tea",
+		"tea" : "Milk Tea",
+		"add_on" : "Pearls",
+		"price" : "4.0",
+		"image" : "img/bubbleTea/bubble_tea_1.png"
+	},
+	{
+		"id" : "2",
+		"name" : "Strawberry Green Tea",
+		"tea" : "Green Tea",
+		"add_on" : "Puree",
+		"price" : "5.0",
+		"image" : "img/bubbleTea/bubble_tea_2.png"
+	},
+	{
+		"id" : "3",
+		"name" : "Hokkaido Green Milk Tea",
+		"tea" : "Milk Tea",
+		"add_on" : "Pearls",
+		"price" : "5.5",
+		"image" : "img/bubbleTea/bubble_tea_3.png"
+	},
+	{
+		"id" : "4",
+		"name" : "Thai Tea",
+		"tea" : "Other",
+		"add_on" : "Pearls",
+		"price" : "5.5",
+		"image" : "img/bubbleTea/bubble_tea_4.png"
+	},
+	{
+		"id" : "5",
+		"name" : "Passion Fruit Green Tea",
+		"tea" : "Green Tea",
+		"add_on" : "Puree",
+		"price" : "5.0",
+		"image" : "img/bubbleTea/bubble_tea_5.png"
+	},
+	{
+		"id" : "6",
+		"name" : "Taro Milk Tea",
+		"tea" : "Milk Tea",
+		"add_on" : "Pearls",
+		"price" : "4.5",
+		"image" : "img/bubbleTea/bubble_tea_6.png"
+	},
+	{
+		"id" : "7",
+		"name" : "Lychee Black Tea",
+		"tea" : "Black Tea",
+		"add_on" : "Puree",
+		"price" : "5.0",
+		"image" : "img/bubbleTea/bubble_tea_7.png"
+	},
+	{
+		"id" : "8",
+		"name" : "Green Apple Green Tea",
+		"tea" : "Green Tea",
+		"add_on" : "Puree",
+		"price" : "5.0",
+		"image" : "img/bubbleTea/bubble_tea_8.png"
+	},
+	{
+		"id" : "9",
+		"name" : "Jasmine Green Tea",
+		"tea" : "Green Tea",
+		"add_on" : "Puree",
+		"price" : "5.0",
+		"image" : "img/bubbleTea/bubble_tea_9.png"
+	},
+	{
+		"id" : "10",
+		"name" : "Pineapple Green Tea",
+		"tea" : "Green Tea",
+		"add_on" : "Puree",
+		"price" : "5.0",
+		"image" : "img/bubbleTea/bubble_tea_10.png"
+	},
+	{
+		"id" : "11",
+		"name" : "Coconut Milk Tea",
+		"tea" : "Milk Tea",
+		"add_on" : "Pearls",
+		"price" : "4.5",
+		"image" : "img/bubbleTea/bubble_tea_11.png"
+	},
+	{
+		"id" : "12",
+		"name" : "Peach Green Tea",
+		"tea" : "Green Tea",
+		"add_on" : "Puree",
+		"price" : "5.0",
+		"image" : "img/bubbleTea/bubble_tea_12.png"
+	},
+	{
+		"id" : "13",
+		"name" : "Matcha Milk Tea",
+		"tea" : "Milk Tea",
+		"add_on" : "Pearls",
+		"price" : "4.5",
+		"image" : "img/bubbleTea/bubble_tea_13.png"
+	},
+	{
+		"id" : "14",
+		"name" : "Almond Milk Tea",
+		"tea" : "Milk Tea",
+		"add_on" : "Pearls",
+		"price" : "4.5",
+		"image" : "img/bubbleTea/bubble_tea_14.png"
+	},
+	{
+		"id" : "15",
+		"name" : "Rose Milk Tea",
+		"tea" : "Milk Tea",
+		"add_on" : "Pearls",
+		"price" : "4.5",
+		"image" : "img/bubbleTea/bubble_tea_15.png"
+	},
+	{
+		"id" : "16",
+		"name" : "Mango Green Tea",
+		"tea" : "Green Tea",
+		"add_on" : "Puree",
+		"price" : "5.0",
+		"image" : "img/bubbleTea/bubble_tea_16.png"
+	}
+
+]
