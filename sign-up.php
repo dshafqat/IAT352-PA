@@ -29,7 +29,7 @@
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
 					<li><a href="sign-in.php">Account</a></li>
-					<?php if (isset($_SESSION['name'])) { ?>
+					<?php if (isset($_SESSION['email'])) { ?>
 						<li><a href="cart.php">Cart</a></li>
 					<?php } ?>
 				</ul>
@@ -56,7 +56,7 @@
 					<?php 
 
 					include 'config.php';
-
+					// create empty variables
 					$product_name = "";
 					$tea = "";
 					$price_r = "";
@@ -65,18 +65,22 @@
 					$information = "";
 
 					
+					//set varable to databse selection
 
 					$sqla = $conn->query("SELECT product_name FROM products");
 
 					?>
 
+				<!-- dropdown menu -->
 
 				<select id="" name="choice">
 
 				<?php 
 
+				// populate list with product names retriieved from products table
 				while($rows = $sqla->fetch_assoc())
 				{
+
 
 				$product_name = $rows['product_name'];
 				
@@ -121,10 +125,7 @@ $choice = $_REQUEST["choice"];
 
 
 
-
-
-
-
+// Select other data from products to forward into preference database
 
 $query = "SELECT * FROM products";
 
@@ -153,8 +154,6 @@ $information = $row['information'];
 // Open connection to the $file in writing mode
 
 
-
-
 	// check if form is valid
 	if ($password != $ReEnterPassword) {
 			// If passwords not the same
@@ -165,6 +164,7 @@ $information = $row['information'];
 	//check if the email already exist in the database
 	$sqli = $conn->query("SELECT * FROM users WHERE email='$email'");
 	$row_cnt1 = $sqli->num_rows;
+
 	if($row_cnt1 > 0){
 	    exit("*Another user with this email already exists, please try different email*");
 	}
@@ -183,16 +183,21 @@ $information = $row['information'];
 	// After form is completed, redirect to welcome.php to display text otherwise display error
 
 
+
 	 else {
+	 	// inser user data into users table
+
 		$sql = "INSERT into `users` (name, email, password, choice)
 		VALUES ('$name',  '$email','$password', '$choice')";
 		$result = $conn->query($sql);
 
+		//insert preference data into preference table
 
 		$sql = "INSERT into `preference` (choice, tea, price_r, product_image, detail_image, information, email)
 		VALUES ('$choice', '$tea', '$price_r', '$product_image', '$detail_image', '$information', '$email')";
 
 		$result = $conn->query($sql);
+		//redirect to location.php
 		header("Location:welcome.php");
     	exit;
 		echo "Error, could not open file for writing.";

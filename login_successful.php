@@ -27,7 +27,7 @@
           <li><a href="home.php">Home</a></li>
           <li><a href="index.php">Menu</a></li>
           <li><a href="sign-in.php">Account</a></li>
-          <?php if (isset($_SESSION['name'])) { ?>
+          <?php if (isset($_SESSION['email'])) { ?>
             <li><a href="cart.php">Cart</a></li>
           <?php } ?>
         </ul>
@@ -46,8 +46,12 @@
     ?>
 
 <div class="container-fluid">
+
   <?php $name = $_SESSION['name'];?>
+
 		<div class="col-md-12" align="center">
+
+      <!-- buttons redirecting to different pages -->
   		 <h1 class="display-3">Welcome to your account, <?php echo $name; ?>!</h1>
   		 <a href="index.php" class="welcome-btn">Shop Now</a>
        <a href="logout.php" class="welcome-btn">log out</a>

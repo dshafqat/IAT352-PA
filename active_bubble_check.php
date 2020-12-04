@@ -3,6 +3,8 @@
 <?php
 session_start();
 
+//check if user is logged in with their email
+
 if(isset($_SESSION["email"])){
 
   //redirect to logged in page

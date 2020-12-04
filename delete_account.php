@@ -29,7 +29,7 @@ session_start();
           <li><a href="home.php">Home</a></li>
           <li><a href="index.php">Menu</a></li>
           <li><a href="login_successful.php">Account</a></li>
-          <?php if (isset($_SESSION['name'])) { ?>
+          <?php if (isset($_SESSION['email'])) { ?>
             <li><a href="cart.php">Cart</a></li>
           <?php } ?>
         </ul>
@@ -49,16 +49,23 @@ session_start();
         
       require('config.php');
       // include("active_session_check.php");
+   // get the current users name
      if (isset($_SESSION['name'])) {
+
+      // assign it to variable
      $name = $_SESSION['name'];
+
+     //delete from where the current users name is in the database
 
       $sql = "DELETE FROM users WHERE name='$name'";
       $sql2 = "DELETE FROM cart WHERE user_name='$name'";
       $result = $conn->query($sql);
+      // if connection is succeful
 
     if ($conn->query($sql) === TRUE) {
       echo "Record deleted successfully";
 }   else {
+  //Otherwise display error
         echo "Error deleting record: ";
 }
 
@@ -68,6 +75,9 @@ session_start();
 <br>
 <br>
 <br>
+
+<!-- Redirect to logout.php after completing -->
+
 		 <a href="logout.php" class="welcome-btn">Return</a>
 
 		</div>

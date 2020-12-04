@@ -32,7 +32,7 @@ session_start();
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
 					<li><a href="sign-in.php">Account</a></li>
-					<?php if (isset($_SESSION['name'])) { ?>
+					<?php if (isset($_SESSION['email'])) { ?>
 					<li><a href="cart.php">Cart</a></li>
 					<?php } ?>
 				</ul>
@@ -74,6 +74,7 @@ session_start();
 			</div>
 		</section>  <!-- End of the Big image slideshow section -->
 
+ <!-- Check current users email -->
 	
 
 	 <?php if (isset($_SESSION['email'])) { ?>
@@ -85,6 +86,7 @@ session_start();
 			<h2> Order your favourite tea again! </h2>
 
 			<?php
+			// save current users email in a variable called $somevar
 
 				$isTouch = isset($_GET['email']);
 				if($isTouch){
@@ -94,6 +96,8 @@ session_start();
 					$somevar = $_SESSION['email'];
 				}
 
+
+				// Get data from preference database to display in a table, data is set to variables.
 
 				$query = "SELECT * FROM preference";
 
@@ -119,6 +123,7 @@ session_start();
 				<div class="main_store_box">
 				<div id="message"></div>
 				<h3 class="style_text"><?php $product_name; ?></h3>
+				<!-- form to display the favourite retrieved from the database -->
 
 				<form action="" method="post">
 				<p><?php $information; ?></p>
@@ -133,25 +138,32 @@ session_start();
 
 		<?php } ?>
 
-
-
-
 		<?php
+
+		// request quantity of the product 
        if (isset($_REQUEST['qty'])) {	
         $qty = $_REQUEST["qty"];
 	if ($qty == ""){
+		//if empty echo this message
 		$message = "Please input the quantity!";
 		echo "<script type='text/javascript'>alert('$message');</script>";					
 	}else{
+		//get username of current session
 		$username = $_SESSION['name'];
 		$sql = $conn->query("SELECT * FROM cart WHERE user_name='$username'");
 		$row_cnt = $sql->num_rows;
+
+		//if rows searched using name are more than 0, then display this message
 		if($row_cnt > 0){
 		    $message = "Product is already added to your cart!";
 			echo "<script type='text/javascript'>alert('$message');</script>";
-			}else{
+			}
+			// otherwise inset data into cart
+			else{
 				$sqli = "INSERT INTO `cart` (user_name, product_name, product_price, product_image, qty, product_code)
 						VALUES ('$username', '$product_name', '$price_r','$product_image', '$qty', 1)";
+
+						//if connection established 
 				$result = $conn->query($sqli);
 				$message = "Product is added to your cart!";
 				echo "<script type='text/javascript'>alert('$message');</script>";

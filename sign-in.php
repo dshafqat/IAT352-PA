@@ -25,7 +25,7 @@
 					<li><a href="home.php">Home</a></li>
 					<li><a href="index.php">Menu</a></li>
 					<li><a href="login_successful.php">Account</a></li>
-					<?php if (isset($_SESSION['name'])) { ?>
+					<?php if (isset($_SESSION['email'])) { ?>
 						<li><a href="cart.php">Cart</a></li>
 					<?php } ?>
 				</ul>
